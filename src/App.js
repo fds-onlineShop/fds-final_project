@@ -3,15 +3,26 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
 import LoginPage from './pages/LoginPage';
 
-import { UserProvider } from './contexts/UserContext';
+import { AuthProvider } from './contexts/AuthContext';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <UserProvider>
+        <AuthProvider>
           <Route path="/login" component={LoginPage} />
-        </UserProvider>
+          <Route
+            exact
+            path="/"
+            render={() =>
+              localStorage.getItem('token') ? (
+                <Redirect to="/login" />
+              ) : (
+                <Redirect to="/login" />
+              )
+            }
+          />
+        </AuthProvider>
       </BrowserRouter>
     );
   }

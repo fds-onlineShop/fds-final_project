@@ -1,18 +1,16 @@
 import React from 'react';
 
 import LoginFormContainer from '../containers/LoginFormContainer';
+import NavBarContainer from '../containers/NavBarContainer';
 import MainLayout from '../components/MainLayout';
-import NavBar from '../components/NavBar';
 
-export default class LoginPage extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <NavBar />
-        <MainLayout>
-          <LoginFormContainer />;
-        </MainLayout>
-      </React.Fragment>
-    );
-  }
+export default function LoginPage() {
+  return (
+    <React.Fragment>
+      <NavBarContainer />
+      <MainLayout>
+        <LoginFormContainer />
+      </MainLayout>
+    </React.Fragment>
+  );
 }

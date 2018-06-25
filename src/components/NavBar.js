@@ -9,14 +9,20 @@ export default function NavBar({
     <nav className="navbar is-primary">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
-          BBS
+          FDS-SHOP
         </Link>
       </div>
 
       <div className="navbar-menu">
         <div className="navbar-start">
-          <Link className="navbar-item" to="/posts">
-            게시글 목록
+          <Link className="navbar-item" to="/tops">
+            top
+          </Link>
+          <Link className="navbar-item" to="/bottoms">
+            bottom
+          </Link>
+          <Link className="navbar-item" to="/shoes">
+            shoes
           </Link>
         </div>
 
@@ -25,7 +31,7 @@ export default function NavBar({
             <div className="field is-grouped">
               {username ? (
                 <React.Fragment>
-                  <span className="navbar-item">{username}</span>
+                  <span className="navbar-item">{username}님 환영합니다!</span>
                   <p className="control">
                     <button onClick={e => onLogout()} className="button">
                       로그아웃
