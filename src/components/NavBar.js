@@ -15,10 +15,10 @@ export default function NavBar({
 
       <div className="navbar-menu">
         <div className="navbar-start">
-          <Link className="navbar-item" to="/tops">
+          <Link className="navbar-item" to="/top">
             top
           </Link>
-          <Link className="navbar-item" to="/bottoms">
+          <Link className="navbar-item" to="/bottom">
             bottom
           </Link>
           <Link className="navbar-item" to="/shoes">

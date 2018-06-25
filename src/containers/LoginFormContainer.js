@@ -15,7 +15,7 @@ export default class LoginFormContainer extends React.Component {
   updatePassword = password => this.setState({ password });
   render() {
     const { success, username, password } = this.state;
-    if (success) return <Redirect to="/posts" />;
+    if (success) return <Redirect to="/main" />;
     return (
       <AuthConsumer>
         {({ login }) => (

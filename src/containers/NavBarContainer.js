@@ -10,7 +10,7 @@ export default class NavBarContainer extends React.Component {
   };
   render() {
     const { loggedOut } = this.state;
-    if (loggedOut) return <Redirect to="/login" />;
+    if (loggedOut) return <Redirect to="/" />;
     return (
       <AuthConsumer>
         {({ username, logout }) => (
