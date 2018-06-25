@@ -15,6 +15,11 @@ class App extends Component {
       <BrowserRouter>
         <AuthProvider>
           <Switch>
+            <Route path="/login" component={LoginPage} />
+            <Route path="/main" component={MainPage} />
+            <Route path="/top" component={TopPage} />
+            <Route path="/bottom" component={BottomPage} />
+            <Route path="/shoes" component={ShoesPage} />
             <Route
               exact
               path="/"
@@ -22,16 +27,11 @@ class App extends Component {
                 localStorage.getItem('token') ? (
                   <Redirect to="/main" />
                 ) : (
-                  <Redirect to="/login" />
+                  <Redirect to="/main" />
                 )
               }
             />
           </Switch>
-          <Route path="/login" component={LoginPage} />
-          <Route path="/main" component={MainPage} />
-          <Route path="/top" component={TopPage} />
-          <Route path="/bottom" component={BottomPage} />
-          <Route path="/shoes" component={ShoesPage} />
         </AuthProvider>
       </BrowserRouter>
     );
