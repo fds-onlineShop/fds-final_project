@@ -12,7 +12,7 @@ export default class LoginForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.loginEvent}>
-        <h1>로그인 페이지</h1>
+        <h1>로그인페이지</h1>
         <label>
           아이디:
           <input defaultValue="fds" type="text" name="username" />
