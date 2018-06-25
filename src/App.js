@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
+
+import LoginPage from './pages/LoginPage';
+
+import { UserProvider } from './contexts/UserContext';
 
 class App extends Component {
   render() {
-    return <div />;
+    return (
+      <UserProvider>
+        <LoginPage />
+      </UserProvider>
+    );
   }
 }
 
