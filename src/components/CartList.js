@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CartListItem from './CartListItem';
 
-export default function CartList({ carts = [] }) {
+export default function CartList({ carts = [], onRemoveCartItem = () => {} }) {
   let cartTotalPrice = 0;
   for (let i = 0; i < carts.length; i++) {
     cartTotalPrice += parseFloat(carts[i].price.replace(/\$/, ''));
@@ -10,7 +10,13 @@ export default function CartList({ carts = [] }) {
   return carts.length > 0 ? (
     <div className="cart-item">
       <ul className="cart-item__list">
-        {carts.map(cart => <CartListItem key={cart.id} {...cart} />)}
+        {carts.map(cart => (
+          <CartListItem
+            key={cart.id}
+            {...cart}
+            onRemoveCartItem={onRemoveCartItem}
+          />
+        ))}
       </ul>
       <Link to="/orders">
         Checkout / <span className="unit">${cartTotalPrice}</span>
