@@ -5,7 +5,7 @@ import { CartProvider } from '../contexts/CartContext';
 
 export default class CartPage extends React.Component {
   static defaultProps = {
-    title: 'MY GOODS',
+    title: 'SHOPPING BAG',
   };
   render() {
     return (

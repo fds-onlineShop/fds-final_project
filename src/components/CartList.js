@@ -20,9 +20,9 @@ export default function CartList({ carts = [], onRemoveCartItem = () => {} }) {
           />
         ))}
       </ul>
-      <Link to="/orders">
+      <button className="button">
         Checkout / <span className="unit">${cartTotalPrice}</span>
-      </Link>
+      </button>
     </div>
   ) : (
     // Cart가 비어있는 경우
