@@ -11,6 +11,11 @@ export default function OrderForm({
   onPhoneChange = phone => {},
   onSubmit = () => {},
 }) {
+  // Order 총합계 금액 계산식
+  let orderTotalPrice = 0;
+  for (let i = 0; i < carts.length; i++) {
+    orderTotalPrice += parseFloat(carts[i].price.replace(/\$/, ''));
+  }
   return (
     <form
       onSubmit={e => {
@@ -62,6 +67,11 @@ export default function OrderForm({
         <ul className="orderForm__list">
           {carts.map(cart => <OrderFormItem {...cart} />)}
         </ul>
+        <div className="orderForm__total">
+          Total<span className="orderForm__total_price">
+            ${orderTotalPrice}
+          </span>
+        </div>
       </section>
       <button className="button">Payment</button>
     </form>
