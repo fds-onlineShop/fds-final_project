@@ -16,12 +16,12 @@ class App extends Component {
       <BrowserRouter>
         <AuthProvider>
           <Switch>
-            <Route path="/login" component={LoginPage} />
+            <Route path="/login" component={LoginControl} />
+            <Route path="/signup" component={SignUpControl} />
             <Route path="/main" component={MainPage} />
             <Route path="/top" component={TopPage} />
             <Route path="/bottom" component={BottomPage} />
             <Route path="/shoes" component={ShoesPage} />
-            <Route path="/signup" component={SignupPage} />
             <Route
               exact
               path="/"
@@ -39,5 +39,11 @@ class App extends Component {
     );
   }
 }
+
+const LoginControl = () =>
+  localStorage.getItem('token') ? <Redirect to="/main" /> : <LoginPage />;
+
+const SignUpControl = () =>
+  localStorage.getItem('token') ? <Redirect to="/main" /> : <SignupPage />;
 
 export default App;
