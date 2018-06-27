@@ -39,11 +39,14 @@ export default function NavBar({
                   </p>
                 </React.Fragment>
               ) : (
-                <p className="control">
+                <div>
                   <Link to="/login" className="button is-primary">
                     로그인
                   </Link>
-                </p>
+                  <Link to="/signup" className="button is-primary">
+                    회원가입
+                  </Link>
+                </div>
               )}
             </div>
           </div>
