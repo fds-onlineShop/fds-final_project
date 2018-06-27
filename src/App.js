@@ -6,6 +6,7 @@ import MainPage from './pages/MainPage';
 import TopPage from './pages/TopPage';
 import BottomPage from './pages/BottomPage';
 import ShoesPage from './pages/ShoesPage';
+import SignupPage from './pages/SignUpPage';
 
 import { AuthProvider } from './contexts/AuthContext';
 
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/top" component={TopPage} />
             <Route path="/bottom" component={BottomPage} />
             <Route path="/shoes" component={ShoesPage} />
+            <Route path="/signup" component={SignupPage} />
             <Route
               exact
               path="/"
