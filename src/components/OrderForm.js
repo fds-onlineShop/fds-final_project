@@ -1,20 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import OrderFormItem from './OrderFormItem';
 export default function OrderForm({
-  name = '',
-  address = '',
-  phone = '',
-  carts = [],
-  onNameChange = name => {},
-  onAddressChange = address => {},
-  onPhoneChange = phone => {},
+  orderName = '',
+  orderAddress = '',
+  orderPhone = '',
+  orderEmail = '',
+  orderItems = [],
+  onNameChange = orderName => {},
+  onAddressChange = orderAddress => {},
+  onPhoneChange = orderPhone => {},
+  onEmailChange = orderEmail => {},
   onSubmit = () => {},
 }) {
   // Order 총합계 금액 계산식
   let orderTotalPrice = 0;
-  for (let i = 0; i < carts.length; i++) {
-    orderTotalPrice += parseFloat(carts[i].price.replace(/\$/, ''));
+  for (let i = 0; i < orderItems.length; i++) {
+    orderTotalPrice += parseFloat(orderItems[i].price.replace(/\$/, ''));
   }
   return (
     <form
@@ -28,36 +29,55 @@ export default function OrderForm({
         <h3>Shipping Address</h3>
         <div className="field">
           <div className="control">
+            <label htmlFor="name" className="label">
+              Name
+            </label>
             <input
               type="text"
-              placeholder="Name"
-              aria-label="name"
               required
               className="input"
-              value={name}
+              id="name"
+              value={orderName}
               onChange={e => onNameChange(e.target.value)}
             />
           </div>
           <div className="control">
+            <label htmlFor="address" className="label">
+              Address
+            </label>
             <input
               type="text"
-              placeholder="Address"
-              aria-label="address"
               required
               className="input"
-              value={address}
+              id="address"
+              value={orderAddress}
               onChange={e => onAddressChange(e.target.value)}
             />
           </div>
           <div className="control">
+            <label htmlFor="phone" className="label">
+              Phone
+            </label>
             <input
               type="text"
-              placeholder="Phone"
-              aria-label="phone"
               required
               className="input"
-              value={phone}
+              id="phone"
+              value={orderPhone}
               onChange={e => onPhoneChange(e.target.value)}
+            />
+          </div>
+          <div className="control">
+            <label htmlFor="email" className="label">
+              Email
+            </label>
+            <input
+              type="text"
+              required
+              className="input"
+              id="email"
+              value={orderEmail}
+              onChange={e => onEmailChange(e.target.value)}
             />
           </div>
         </div>
@@ -65,12 +85,13 @@ export default function OrderForm({
       <section className="orderForm__order">
         <h3>Shopping Bag</h3>
         <ul className="orderForm__list">
-          {carts.map(cart => <OrderFormItem {...cart} />)}
+          {orderItems.map((orderItem, index) => (
+            <OrderFormItem key={index} {...orderItem} />
+          ))}
         </ul>
         <div className="orderForm__total">
-          Total<span className="orderForm__total_price">
-            ${orderTotalPrice}
-          </span>
+          <span className="orderForm__total__heading">Total</span>
+          <span className="orderForm__total__price">${orderTotalPrice}</span>
         </div>
       </section>
       <button className="button">Payment</button>

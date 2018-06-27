@@ -28,6 +28,7 @@ class CartProvider extends React.Component {
       this.setState({ loading: false });
     }
   };
+  // 장바구니 아이템 삭제 기능
   removeCartItem = async id => {
     this.setState({ loading: true });
     try {
