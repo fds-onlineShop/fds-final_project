@@ -22,7 +22,10 @@ export default class SignUpFormContainer extends React.Component {
 
   render() {
     const { success, username, password, address, phone, email } = this.state;
-    if (success) return <Redirect to="/main" />;
+    if (success) {
+      alert('회원가입이 완료되었습니다.! 로그인을 해주세요');
+      return <Redirect to="/main" />;
+    }
     return (
       <AuthConsumer>
         {({ signup }) => (
@@ -43,11 +46,16 @@ export default class SignUpFormContainer extends React.Component {
                 this.setState({ success: true });
               } catch (e) {
                 if (e.response && e.response.status === 400) {
-                  alert('사용자 이름 혹은 비밀번호가 잘못되었습니다.');
-                  this.setState({
-                    username: '',
-                    password: '',
-                  });
+                  if (username === '') {
+                    alert('사용자 이름을 입력해주세요');
+                  } else if (password === '') {
+                    alert('패스워드를 입력해주세요');
+                  } else {
+                    alert('사용자 이름이 중복입니다.');
+                    this.setState({
+                      username: '',
+                    });
+                  }
                 } else {
                   alert(
                     '네트워크 에러가 발생했습니다. 잠시 후 다시 시도해주세요.'

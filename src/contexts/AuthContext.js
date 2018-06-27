@@ -83,7 +83,8 @@ class AuthProvider extends React.Component {
         phone,
         email,
       });
-      await this.fetchMe();
+      localStorage.removeItem('token');
+      // await this.fetchMe();
     } finally {
       this.setState(prevState => ({
         loading: prevState.loading - 1,
