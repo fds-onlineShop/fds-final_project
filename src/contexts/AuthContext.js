@@ -4,6 +4,7 @@ import superAPI from '../superAPI';
 
 const { Provider, Consumer } = React.createContext({
   login: (username, password) => {}, // 로그인 함수
+  signup: (username, password, address, phone, email) => {},
 });
 
 class AuthProvider extends React.Component {
@@ -17,6 +18,9 @@ class AuthProvider extends React.Component {
     loading: 0,
     id: null,
     username: null,
+    address: null,
+    phone: null,
+    mail: null,
   };
 
   async fetchMe() {
@@ -62,12 +66,41 @@ class AuthProvider extends React.Component {
     });
   };
 
+  signup = async (username, password, address, phone, email) => {
+    this.setState(prevState => ({
+      loading: prevState.loading + 1,
+    }));
+    try {
+      const res = await superAPI.post('/users/register', {
+        username,
+        password,
+      });
+      localStorage.setItem('token', res.data.token);
+      const meRes = await superAPI.get('/me');
+      const meId = meRes.data.id;
+      const addInfoRes = await superAPI.patch(`/users/${meId}`, {
+        address,
+        phone,
+        email,
+      });
+      await this.fetchMe();
+    } finally {
+      this.setState(prevState => ({
+        loading: prevState.loading - 1,
+      }));
+    }
+  };
+
   render() {
     const value = {
       login: this.login,
       logout: this.logout,
+      signup: this.signup,
       id: this.state.id,
       username: this.state.username,
+      address: this.state.address,
+      phone: this.state.phone,
+      email: this.state.email,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }
