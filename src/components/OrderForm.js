@@ -1,18 +1,18 @@
 import React from 'react';
 import OrderFormItem from './OrderFormItem';
 export default function OrderForm({
-  orderName = '',
-  orderAddress = '',
-  orderPhone = '',
-  orderEmail = '',
-  orderItems = [],
-  onNameChange = orderName => {},
-  onAddressChange = orderAddress => {},
-  onPhoneChange = orderPhone => {},
-  onEmailChange = orderEmail => {},
-  onSubmit = () => {},
+  orderName = '', // 배송지 이름 입력 필드에 표시될 값
+  orderAddress = '', // 배송지 주소 입력 필드에 표시될 값
+  orderPhone = '', // 배송지 핸드폰번호 입력 필드에 표시될 값
+  orderEmail = '', // 배송지 이메일 입력 필드에 표시될 값
+  orderItems = [], // 주문할 물품 리스트에 표시될 값
+  onNameChange = orderName => {}, // 배송지 이름 입력 필드에 입력이 일어날 때 호출되는 함수
+  onAddressChange = orderAddress => {}, // 배송지 주소 입력 필드에 입력이 일어날 때 호출되는 함수
+  onPhoneChange = orderPhone => {}, // 배송지 핸드폰번호 입력 필드에 입력이 일어날 때 호출되는 함수
+  onEmailChange = orderEmail => {}, // 배송지 이메일 입력 필드에 입력이 일어날 때 호출되는 함수
+  onSubmit = () => {}, // 폼 전송이 일어날 때 호출되는 함수
 }) {
-  // Order 총합계 금액 계산식
+  // 주문 금액 총합계 계산식
   let orderTotalPrice = 0;
   for (let i = 0; i < orderItems.length; i++) {
     orderTotalPrice += parseFloat(orderItems[i].price.replace(/\$/, ''));

@@ -6,6 +6,7 @@ const { Provider, Consumer } = React.createContext();
 class OrderFormProvider extends React.Component {
   state = {
     loading: false,
+    success: false,
     orderName: '',
     orderAddress: '',
     orderPhone: '',
@@ -37,25 +38,42 @@ class OrderFormProvider extends React.Component {
   }
 
   submit = async () => {
-    const orderDate = new Date().toLocaleDateString();
-
+    alert('주문이 완료되었습니다.');
+    const date = new Date().toLocaleDateString();
+    let priceTotal = 0;
+    for (let i = 0; i < this.state.orderItems.length; i++) {
+      priceTotal += parseFloat(
+        this.state.orderItems[i].price.replace(/\$/, '')
+      );
+    }
     const payload = {
       orderName: this.state.orderName,
       orderAddress: this.state.orderAddress,
       orderPhone: this.state.orderPhone,
       orderEmail: this.state.orderEmail,
-      orderDate: orderDate,
-      //orderItems: this.state.carts,
+      orderDate: date,
+      orderItems: this.state.orderItems,
+      orderPrice: priceTotal,
     };
     this.setState({ loading: true });
     try {
-      const res = await superAPI.post('/orders', payload);
+      const orderRes = await superAPI.post('/orders', payload);
       this.setState({
-        orderName: res.data.orderName,
-        orderAddress: res.data.orderAddress,
-        orderPhone: res.data.orderPhone,
-        orderEmail: res.data.orderEmail,
+        success: true,
+        orderName: orderRes.data.orderName,
+        orderAddress: orderRes.data.orderAddress,
+        orderPhone: orderRes.data.orderPhone,
+        orderEmail: orderRes.data.orderEmail,
       });
+
+      const cartItems = [];
+      const cartRes = await superAPI.get(`/carts`);
+      for (let i = 0; i < cartRes.data.length; i++) {
+        cartItems.push(cartRes.data[i].id);
+      }
+      for (let i = 0; i < cartItems.length; i++) {
+        await superAPI.delete(`/carts/${cartItems[i]}?_expand=user`);
+      }
     } finally {
       this.setState({ loading: false });
     }
