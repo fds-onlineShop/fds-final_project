@@ -4,8 +4,8 @@ const { Provider, Consumer } = React.createContext();
 
 class CartProvider extends React.Component {
   state = {
-    carts: [],
     loading: false,
+    carts: [],
   };
   async componentDidMount() {
     await this.fetchCartItems();
