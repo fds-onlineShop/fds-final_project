@@ -12,7 +12,7 @@ storiesOf('OrderHistory', module)
     <OrderHistory
       orders={[
         {
-          orderName: 'asdf',
+          //orderName: 'asdf',
           orderAddress: 'asdf2',
           orderPhone: 'asdfas2',
           orderEmail: 'ddsf22',

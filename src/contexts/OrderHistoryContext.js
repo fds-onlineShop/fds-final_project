@@ -16,6 +16,14 @@ class OrderHistoryProvider extends React.Component {
     });
     try {
       const res = await superAPI.get('/orders');
+      this.setState({
+        orders: res.data.map(order => ({
+          id: order.id,
+          orderDate: order.orderDate,
+          orderItems: order.orderItems,
+          orderPrice: order.orderPrice,
+        })),
+      });
     } finally {
       this.setState({ loading: false });
     }

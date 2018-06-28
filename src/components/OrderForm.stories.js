@@ -10,7 +10,6 @@ storiesOf('OrderForm', module)
   .add('empty', () => <OrderForm />)
   .add('with address and items', () => (
     <OrderForm
-      orderName="Jaeyeon Lee"
       orderAddress="Seoul Korea"
       orderPhone="010-1234-1234"
       orderEmail="abc@aaaa.com"

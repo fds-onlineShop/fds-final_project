@@ -7,7 +7,6 @@ class OrderFormProvider extends React.Component {
   state = {
     loading: false,
     success: false,
-    orderName: '',
     orderAddress: '',
     orderPhone: '',
     orderEmail: '',
@@ -17,13 +16,14 @@ class OrderFormProvider extends React.Component {
   async componentDidMount() {
     this.setState({ loading: true });
     try {
-      const userRes = await superAPI.get(`/users`);
+      const userRes = await superAPI.get(`/me`);
+      console.log(userRes);
       const cartRes = await superAPI.get(`/carts`);
       this.setState({
-        orderName: userRes.data.name,
         orderAddress: userRes.data.address,
         orderPhone: userRes.data.phone,
         orderEmail: userRes.data.email,
+
         orderItems: cartRes.data.map(cart => ({
           imgurl: cart.imgurl,
           title: cart.title,

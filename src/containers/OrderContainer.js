@@ -11,11 +11,9 @@ export default class OrderContainer extends React.Component {
         {({
           loading,
           success,
-          orderName,
           orderAddress,
           orderPhone,
           orderEmail,
-          updateName,
           updateAddress,
           updatePhone,
           updateEmail,
@@ -28,11 +26,9 @@ export default class OrderContainer extends React.Component {
             <Redirect to={`/orderhistory`} />
           ) : (
             <OrderForm
-              orderName={orderName}
               orderAddress={orderAddress}
               orderPhone={orderPhone}
               orderEmail={orderEmail}
-              onNameChange={updateName}
               onAddressChange={updateAddress}
               onPhoneChange={updatePhone}
               onEmailChange={updateEmail}

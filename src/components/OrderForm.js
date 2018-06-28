@@ -1,12 +1,10 @@
 import React from 'react';
 import OrderFormItem from './OrderFormItem';
 export default function OrderForm({
-  orderName = '', // 배송지 이름 입력 필드에 표시될 값
   orderAddress = '', // 배송지 주소 입력 필드에 표시될 값
   orderPhone = '', // 배송지 핸드폰번호 입력 필드에 표시될 값
   orderEmail = '', // 배송지 이메일 입력 필드에 표시될 값
   orderItems = [], // 주문할 물품 리스트에 표시될 값
-  onNameChange = orderName => {}, // 배송지 이름 입력 필드에 입력이 일어날 때 호출되는 함수
   onAddressChange = orderAddress => {}, // 배송지 주소 입력 필드에 입력이 일어날 때 호출되는 함수
   onPhoneChange = orderPhone => {}, // 배송지 핸드폰번호 입력 필드에 입력이 일어날 때 호출되는 함수
   onEmailChange = orderEmail => {}, // 배송지 이메일 입력 필드에 입력이 일어날 때 호출되는 함수
@@ -28,19 +26,6 @@ export default function OrderForm({
       <section className="orderForm__address">
         <h3>Shipping Address</h3>
         <div className="field">
-          <div className="control">
-            <label htmlFor="name" className="label">
-              Name
-            </label>
-            <input
-              type="text"
-              required
-              className="input"
-              id="name"
-              value={orderName}
-              onChange={e => onNameChange(e.target.value)}
-            />
-          </div>
           <div className="control">
             <label htmlFor="address" className="label">
               Address
