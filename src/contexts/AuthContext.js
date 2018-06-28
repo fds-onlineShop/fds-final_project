@@ -24,7 +24,7 @@ class AuthProvider extends React.Component {
       loading: prevState.loading + 1,
     }));
     try {
-      const res = await superAPI.get('/me');
+      const res = await superAPI.get('/users');
       this.setState({
         id: res.data.id,
         username: res.data.username,
