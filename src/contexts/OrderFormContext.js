@@ -64,15 +64,12 @@ class OrderFormProvider extends React.Component {
         orderPhone: orderRes.data.orderPhone,
         orderEmail: orderRes.data.orderEmail,
       });
-      const userRes = await superAPI.get(`/me`);
       const cartItems = [];
       const cartRes = await superAPI.get(`/carts`);
       for (let i = 0; i < cartRes.data.length; i++) {
         cartItems.push(cartRes.data[i].id);
-        console.log(cartItems);
       }
       for (let i = 0; i < cartItems.length; i++) {
-        console.log(cartItems[i]);
         await superAPI.delete(`/carts/${cartItems[i]}`);
       }
     } finally {
