@@ -31,7 +31,7 @@ export default function CartList({
     // 장바구니가 비어있는 경우
     <div className="cart-noitem">
       <p>The Cart is empty.</p>
-      <Link to="/" className="button">
+      <Link to="/main" className="button">
         Continue Browsing
       </Link>
     </div>
