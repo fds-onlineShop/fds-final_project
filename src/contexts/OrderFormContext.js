@@ -38,7 +38,7 @@ class OrderFormProvider extends React.Component {
   }
 
   submit = async () => {
-    alert('주문이 완료되었습니다.');
+    alert(' Your order has been completed.');
     const date = new Date().toLocaleDateString();
     let priceTotal = 0;
     for (let i = 0; i < this.state.orderItems.length; i++) {
