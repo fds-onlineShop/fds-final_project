@@ -17,7 +17,6 @@ class OrderFormProvider extends React.Component {
     this.setState({ loading: true });
     try {
       const userRes = await superAPI.get(`/me`);
-      console.log(userRes);
       const cartRes = await superAPI.get(`/carts`);
       this.setState({
         orderAddress: userRes.data.address,
@@ -65,14 +64,16 @@ class OrderFormProvider extends React.Component {
         orderPhone: orderRes.data.orderPhone,
         orderEmail: orderRes.data.orderEmail,
       });
-
+      const userRes = await superAPI.get(`/me`);
       const cartItems = [];
       const cartRes = await superAPI.get(`/carts`);
       for (let i = 0; i < cartRes.data.length; i++) {
         cartItems.push(cartRes.data[i].id);
+        console.log(cartItems);
       }
       for (let i = 0; i < cartItems.length; i++) {
-        await superAPI.delete(`/carts/${cartItems[i]}?_expand=user`);
+        console.log(cartItems[i]);
+        await superAPI.delete(`/carts/${cartItems[i]}`);
       }
     } finally {
       this.setState({ loading: false });
