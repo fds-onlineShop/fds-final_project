@@ -4,7 +4,7 @@ import { ShoesListConsumer } from '../contexts/ShoesListContext';
 import LoadingBox from '../components/LoadingBox';
 import ShoesList from '../components/ShoesList';
 
-export default class TopListContainer extends React.Component {
+export default class ShoesListContainer extends React.Component {
   render() {
     return (
       <ShoesListConsumer>

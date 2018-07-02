@@ -35,11 +35,11 @@ class ShoesListProvider extends React.Component {
   }
 
   submit = async id => {
-    const topItem = this.state.shoes.find(top => top.id === id);
+    const shoesItem = this.state.shoes.find(shoes => shoes.id === id);
     const payload = {
-      imgurl: topItem.imgurl,
-      title: topItem.title,
-      price: topItem.price,
+      imgurl: shoesItem.imgurl,
+      title: shoesItem.title,
+      price: shoesItem.price,
     };
     this.setState({ loading: true });
     try {
