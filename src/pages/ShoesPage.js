@@ -7,7 +7,10 @@ export default function ShoesPage() {
   return (
     <React.Fragment>
       <NavBarContainer />
-      <MainLayout>shoes 페이지입니다.</MainLayout>
+      <MainLayout>
+        <div className="content_dummy-box" />
+        <p>shoes page 입니다.</p>
+      </MainLayout>
     </React.Fragment>
   );
 }
