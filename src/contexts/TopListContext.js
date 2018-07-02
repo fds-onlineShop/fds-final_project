@@ -43,7 +43,7 @@ class TopListProvider extends React.Component {
     };
     this.setState({ loading: true });
     try {
-      const res = await superAPI.post(`/carts/`, payload);
+      await superAPI.post(`/carts/`, payload);
     } finally {
       this.setState({ loading: false });
     }
