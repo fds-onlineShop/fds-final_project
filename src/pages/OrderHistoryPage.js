@@ -1,7 +1,6 @@
 import React from 'react';
 import OrderHistoryContainer from '../containers/OrderHistoryContainer';
 import { OrderHistoryProvider } from '../contexts/OrderHistoryContext';
-import NavBar from '../components/NavBar';
 import NavBarContainer from '../containers/NavBarContainer';
 import MainLayout from '../components/MainLayout';
 

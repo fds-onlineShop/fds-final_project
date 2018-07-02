@@ -1,6 +1,13 @@
 @import '../node_modules/bulma/bulma.sass';
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+body {
+  background-color: #fff;
+  font-family: 'ABeeZee', sans-serif;
+}
+
 .navbar {
   background: rgba(255, 255, 255, 0.7);
+
   width: 100%;
   text-align: center;
   position: fixed;
@@ -21,4 +28,25 @@ video {
 
 .content_dummy-box {
   padding-bottom: 60px;
+}
+
+.menu {
+  position: fixed;
+  float: left;
+  z-index: 100;
+
+  margin-left: 80px;
+  &-label,
+  &-list a {
+    color: black;
+  }
+  &-list a {
+    width: min-content;
+  }
+}
+
+.layout-center {
+  display: block;
+  width: 1000px;
+  margin: 0 auto;
 }

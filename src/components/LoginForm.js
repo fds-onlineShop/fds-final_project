@@ -23,7 +23,7 @@ export default class LoginForm extends React.Component {
     } = this.props;
 
     return (
-      <React.Fragment>
+      <div className="layout-center">
         <form onSubmit={this.handleSubmit}>
           <div className="field">
             <label className="label">사용자 이름</label>
@@ -53,7 +53,7 @@ export default class LoginForm extends React.Component {
             </div>
           </div>
         </form>
-      </React.Fragment>
+      </div>
     );
   }
 }

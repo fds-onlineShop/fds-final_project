@@ -1,4 +1,5 @@
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
+@import url("https://fonts.googleapis.com/css?family=ABeeZee");
 @-webkit-keyframes spinAround {
   from {
     -webkit-transform: rotate(0deg);
@@ -10635,6 +10636,11 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+body {
+  background-color: #fff;
+  font-family: 'ABeeZee', sans-serif;
+}
+
 .navbar {
   background: rgba(255, 255, 255, 0.7);
   width: 100%;
@@ -10657,5 +10663,29 @@ video {
 
 .content_dummy-box {
   padding-bottom: 60px;
+}
+
+.menu {
+  position: fixed;
+  float: left;
+  z-index: 100;
+  margin-left: 80px;
+}
+
+.menu-label,
+.menu-list a {
+  color: black;
+}
+
+.menu-list a {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.layout-center {
+  display: block;
+  width: 1000px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=index.css.map */
