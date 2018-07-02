@@ -4,7 +4,7 @@ export default function MainLayout(props) {
   return (
     <div className="main-layout">
       <div className="content_dummy-box" />
-      {props.children}
+      <div className="layout-center">{props.children}</div>
     </div>
   );
 }

@@ -10637,6 +10637,7 @@ label.panel-block:hover {
 }
 
 body {
+  background-color: #fff;
   font-family: 'ABeeZee', sans-serif;
 }
 
@@ -10667,7 +10668,7 @@ video {
 .menu {
   position: fixed;
   float: left;
-  z-index: 200;
+  z-index: 100;
   margin-left: 80px;
 }
 
@@ -10680,5 +10681,11 @@ video {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
+}
+
+.layout-center {
+  display: block;
+  width: 1000px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=index.css.map */
