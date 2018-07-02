@@ -24,7 +24,6 @@ export default class LoginForm extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="content_dummy-box" />
         <form onSubmit={this.handleSubmit}>
           <div className="field">
             <label className="label">사용자 이름</label>

@@ -8,7 +8,6 @@ export default function ShoesPage() {
     <React.Fragment>
       <NavBarContainer />
       <MainLayout>
-        <div className="content_dummy-box" />
         <p>shoes page 입니다.</p>
       </MainLayout>
     </React.Fragment>

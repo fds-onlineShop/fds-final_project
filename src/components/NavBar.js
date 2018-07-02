@@ -33,6 +33,12 @@ export default function NavBar({
                 <React.Fragment>
                   <span className="navbar-item">{username}님 환영합니다!</span>
                   {/* <p className="control"> */}
+                  <Link to="/cart" className="navbar-item">
+                    CART
+                  </Link>
+                  <Link to="/orderhistory" className="navbar-item">
+                    ORDER
+                  </Link>
                   <Link
                     to="/main"
                     onClick={e => onLogout()}
