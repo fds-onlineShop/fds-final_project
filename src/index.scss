@@ -1,4 +1,9 @@
 @import '../node_modules/bulma/bulma.sass';
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+body {
+  font-family: 'ABeeZee', sans-serif;
+}
+
 .navbar {
   background: rgba(255, 255, 255, 0.7);
   width: 100%;
