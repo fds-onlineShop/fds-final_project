@@ -1,15 +1,15 @@
 import React from 'react';
 
 import NavBarContainer from '../containers/NavBarContainer';
-import MainLayout from '../components/MainLayout';
 
-export default function TopPage() {
+import TopListContainer from '../containers/TopListContainer';
+import { TopListProvider } from '../contexts/TopListContext';
+
+export default function TopPage({ match }) {
   return (
-    <React.Fragment>
+    <TopListProvider id={match.params.id}>
       <NavBarContainer />
-      <MainLayout>
-        <p>top page 입니다.</p>
-      </MainLayout>
-    </React.Fragment>
+      <TopListContainer />
+    </TopListProvider>
   );
 }
