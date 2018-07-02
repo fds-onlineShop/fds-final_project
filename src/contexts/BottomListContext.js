@@ -44,6 +44,10 @@ class BottomListProvider extends React.Component {
     this.setState({ loading: true });
     try {
       await superAPI.post(`/carts/`, payload);
+    } catch (e) {
+      if (e.response && e.response.status === 401) {
+        alert('로그인을 해주세요');
+      }
     } finally {
       this.setState({ loading: false });
     }
