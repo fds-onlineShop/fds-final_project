@@ -7,7 +7,10 @@ export default function TopPage() {
   return (
     <React.Fragment>
       <NavBarContainer />
-      <MainLayout>Top 페이지입니다.</MainLayout>
+      <MainLayout>
+        <div className="content_dummy-box" />
+        <p>top page 입니다.</p>
+      </MainLayout>
     </React.Fragment>
   );
 }

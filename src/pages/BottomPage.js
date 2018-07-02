@@ -7,7 +7,10 @@ export default function BottomPage() {
   return (
     <React.Fragment>
       <NavBarContainer />
-      <MainLayout>bottom 페이지입니다.</MainLayout>
+      <MainLayout>
+        <div className="content_dummy-box" />
+        <p>bottom page 입니다.</p>
+      </MainLayout>
     </React.Fragment>
   );
 }

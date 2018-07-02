@@ -1,1 +1,24 @@
 @import '../node_modules/bulma/bulma.sass';
+.navbar {
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+}
+
+a.navbar-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content_dummy-box {
+  padding-bottom: 60px;
+}
