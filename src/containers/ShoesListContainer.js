@@ -1,21 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TopListConsumer } from '../contexts/TopListContext';
+import { ShoesListConsumer } from '../contexts/ShoesListContext';
 import LoadingBox from '../components/LoadingBox';
-import TopList from '../components/TopList';
+import ShoesList from '../components/ShoesList';
 
 export default class TopListContainer extends React.Component {
   render() {
     return (
-      <TopListConsumer>
-        {({ loading, tops, submit }) =>
+      <ShoesListConsumer>
+        {({ loading, shoes, submit }) =>
           loading ? (
             <LoadingBox />
           ) : (
-            <TopList tops={tops} onSubmit={submit} brandAs={Link} />
+            <ShoesList shoes={shoes} onSubmit={submit} brandAs={Link} />
           )
         }
-      </TopListConsumer>
+      </ShoesListConsumer>
     );
   }
 }

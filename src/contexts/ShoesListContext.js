@@ -3,12 +3,12 @@ import superAPI from '../superAPI';
 
 const { Provider, Consumer } = React.createContext();
 
-class TopListProvider extends React.Component {
+class ShoesListProvider extends React.Component {
   static defaultProps = {};
 
   state = {
     id: this.props.id,
-    tops: [],
+    shoes: [],
     loading: false,
     hover: false,
   };
@@ -16,10 +16,10 @@ class TopListProvider extends React.Component {
   async componentDidMount() {
     this.setState({ loading: true });
     try {
-      const res = await superAPI.get(`/tops`);
+      const res = await superAPI.get(`/shoes`);
 
       this.setState({
-        tops: res.data.map(p => ({
+        shoes: res.data.map(p => ({
           id: p.id,
           title: p.title,
           body: p.body,
@@ -35,7 +35,7 @@ class TopListProvider extends React.Component {
   }
 
   submit = async id => {
-    const topItem = this.state.tops.find(top => top.id === id);
+    const topItem = this.state.shoes.find(top => top.id === id);
     const payload = {
       imgurl: topItem.imgurl,
       title: topItem.title,
@@ -51,7 +51,7 @@ class TopListProvider extends React.Component {
 
   render() {
     const value = {
-      tops: this.state.tops,
+      shoes: this.state.shoes,
       loading: this.state.loading,
       submit: this.submit,
     };
@@ -59,4 +59,4 @@ class TopListProvider extends React.Component {
   }
 }
 
-export { TopListProvider, Consumer as TopListConsumer };
+export { ShoesListProvider, Consumer as ShoesListConsumer };
