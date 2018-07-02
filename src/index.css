@@ -10658,4 +10658,22 @@ video {
 .content_dummy-box {
   padding-bottom: 60px;
 }
+
+.menu {
+  position: fixed;
+  float: left;
+  z-index: 200;
+  margin-left: 80px;
+}
+
+.menu-label,
+.menu-list a {
+  color: black;
+}
+
+.menu-list a {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
 /*# sourceMappingURL=index.css.map */

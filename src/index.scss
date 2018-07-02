@@ -22,3 +22,18 @@ video {
 .content_dummy-box {
   padding-bottom: 60px;
 }
+
+.menu {
+  position: fixed;
+  float: left;
+  z-index: 200;
+
+  margin-left: 80px;
+  &-label,
+  &-list a {
+    color: black;
+  }
+  &-list a {
+    width: min-content;
+  }
+}
