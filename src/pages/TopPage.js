@@ -7,7 +7,9 @@ export default function TopPage() {
   return (
     <React.Fragment>
       <NavBarContainer />
-      <MainLayout>Top 페이지입니다.</MainLayout>
+      <MainLayout>
+        <p>top page 입니다.</p>
+      </MainLayout>
     </React.Fragment>
   );
 }

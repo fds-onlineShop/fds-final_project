@@ -23,35 +23,37 @@ export default class LoginForm extends React.Component {
     } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="field">
-          <label className="label">사용자 이름</label>
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              value={username}
-              onChange={e => onUsernameChange(e.target.value)}
-            />
+      <React.Fragment>
+        <form onSubmit={this.handleSubmit}>
+          <div className="field">
+            <label className="label">사용자 이름</label>
+            <div className="control">
+              <input
+                className="input"
+                type="text"
+                value={username}
+                onChange={e => onUsernameChange(e.target.value)}
+              />
+            </div>
           </div>
-        </div>
-        <div className="field">
-          <label className="label">비밀번호</label>
-          <div className="control">
-            <input
-              className="input"
-              type="password"
-              value={password}
-              onChange={e => onPasswordChange(e.target.value)}
-            />
+          <div className="field">
+            <label className="label">비밀번호</label>
+            <div className="control">
+              <input
+                className="input"
+                type="password"
+                value={password}
+                onChange={e => onPasswordChange(e.target.value)}
+              />
+            </div>
           </div>
-        </div>
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-link">전송</button>
+          <div className="field is-grouped">
+            <div className="control">
+              <button className="button is-link">전송</button>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </React.Fragment>
     );
   }
 }
