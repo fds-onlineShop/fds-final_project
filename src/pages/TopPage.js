@@ -1,13 +1,18 @@
 import React from 'react';
 
 import NavBarContainer from '../containers/NavBarContainer';
+
+import TopListContainer from '../containers/TopListContainer';
+import { TopListProvider } from '../contexts/TopListContext';
 import MainLayout from '../components/MainLayout';
 
 export default function TopPage() {
   return (
-    <React.Fragment>
+    <TopListProvider>
       <NavBarContainer />
-      <MainLayout>Top 페이지입니다.</MainLayout>
-    </React.Fragment>
+      <MainLayout>
+        <TopListContainer />
+      </MainLayout>
+    </TopListProvider>
   );
 }

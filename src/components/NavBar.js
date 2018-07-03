@@ -6,7 +6,7 @@ export default function NavBar({
   onLogout = () => {}, // 로그아웃 버튼 클릭 시 호출할 함수
 }) {
   return (
-    <nav className="navbar is-primary">
+    <nav className="navbar">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
           FDS-SHOP
@@ -32,19 +32,27 @@ export default function NavBar({
               {username ? (
                 <React.Fragment>
                   <span className="navbar-item">{username}님 환영합니다!</span>
-                  <p className="control">
-                    <button onClick={e => onLogout()} className="button">
-                      로그아웃
-                    </button>
-                  </p>
+                  <Link to="/cart" className="navbar-item">
+                    CART
+                  </Link>
+                  <Link to="/orderhistory" className="navbar-item">
+                    ORDER
+                  </Link>
+                  <Link
+                    to="/main"
+                    onClick={e => onLogout()}
+                    className="navbar-item"
+                  >
+                    LOGOUT
+                  </Link>
                 </React.Fragment>
               ) : (
                 <React.Fragment>
-                  <Link to="/login" className="button is-primary">
-                    로그인
+                  <Link to="/login" className="navbar-item">
+                    LOGIN
                   </Link>
-                  <Link to="/signup" className="button is-primary">
-                    회원가입
+                  <Link to="/signup" className="navbar-item">
+                    SIGNUP
                   </Link>
                 </React.Fragment>
               )}
