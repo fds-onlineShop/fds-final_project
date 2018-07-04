@@ -57,22 +57,30 @@ class ShoesListProvider extends React.Component {
   handleOver = async id => {
     const res = await superAPI.get(`/shoes/${id}`);
     this.setState({
-      shoes: [
-        ...this.state.shoes,
-        ((this.state.shoes[id - 1].hover = true),
-        (this.state.shoes[id - 1].imgurl = res.data.hoverimg)),
-      ],
+      // shoes: [
+      //   ...this.state.shoes,
+      //   ((this.state.shoes[id - 1].hover = true),
+      //   (this.state.shoshoeses[id - 1].imgurl = res.data.hoverimg)),
+      // ],
+      shoes: this.state.shoes.map(item => {
+        item.id === res.data.id ? (item.imgurl = res.data.hoverimg) : item;
+        return item;
+      }),
     });
   };
 
   handleOut = async id => {
     const res = await superAPI.get(`/shoes/${id}`);
     this.setState({
-      shoes: [
-        ...this.state.shoes,
-        ((this.state.shoes[id - 1].hover = false),
-        (this.state.shoes[id - 1].imgurl = res.data.imgurl)),
-      ],
+      // shoes: [
+      //   ...this.state.shoes,
+      //   ((this.state.shoes[id - 1].hover = false),
+      //   (this.state.shoes[id - 1].imgurl = res.data.imgurl)),
+      // ],
+      shoes: this.state.shoes.map(item => {
+        item.id === res.data.id ? (item.imgurl = res.data.imgurl) : item;
+        return item;
+      }),
     });
   };
 

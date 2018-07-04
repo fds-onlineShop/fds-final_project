@@ -57,22 +57,30 @@ class BottomListProvider extends React.Component {
   handleOver = async id => {
     const res = await superAPI.get(`/bottoms/${id}`);
     this.setState({
-      bottoms: [
-        ...this.state.bottoms,
-        ((this.state.bottoms[id - 1].hover = true),
-        (this.state.bottoms[id - 1].imgurl = res.data.hoverimg)),
-      ],
+      // bottoms: [
+      //   ...this.state.bottoms,
+      //   ((this.state.bottoms[id - 1].hover = true),
+      //   (this.state.bottoms[id - 1].imgurl = res.data.hoverimg)),
+      // ],
+      bottoms: this.state.bottoms.map(item => {
+        item.id === res.data.id ? (item.imgurl = res.data.hoverimg) : item;
+        return item;
+      }),
     });
   };
 
   handleOut = async id => {
     const res = await superAPI.get(`/bottoms/${id}`);
     this.setState({
-      bottoms: [
-        ...this.state.bottoms,
-        ((this.state.bottoms[id - 1].hover = false),
-        (this.state.bottoms[id - 1].imgurl = res.data.imgurl)),
-      ],
+      // bottoms: [
+      //   ...this.state.bottoms,
+      //   ((this.state.bottoms[id - 1].hover = false),
+      //   (this.state.bottoms[id - 1].imgurl = res.data.imgurl)),
+      // ],
+      bottoms: this.state.bottoms.map(item => {
+        item.id === res.data.id ? (item.imgurl = res.data.imgurl) : item;
+        return item;
+      }),
     });
   };
 

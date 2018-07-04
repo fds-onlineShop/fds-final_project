@@ -57,22 +57,30 @@ class TopListProvider extends React.Component {
   handleOver = async id => {
     const res = await superAPI.get(`/tops/${id}`);
     this.setState({
-      tops: [
-        ...this.state.tops,
-        ((this.state.tops[id - 1].hover = true),
-        (this.state.tops[id - 1].imgurl = res.data.hoverimg)),
-      ],
+      // tops: [
+      //   ...this.state.tops,
+      //   ((this.state.tops[id - 1].hover = true),
+      //   (this.state.tops[id - 1].imgurl = res.data.hoverimg)),
+      // ],
+      tops: this.state.tops.map(item => {
+        item.id === res.data.id ? (item.imgurl = res.data.hoverimg) : item;
+        return item;
+      }),
     });
   };
 
   handleOut = async id => {
     const res = await superAPI.get(`/tops/${id}`);
     this.setState({
-      tops: [
-        ...this.state.tops,
-        ((this.state.tops[id - 1].hover = false),
-        (this.state.tops[id - 1].imgurl = res.data.imgurl)),
-      ],
+      // tops: [
+      //   ...this.state.tops,
+      //   ((this.state.tops[id - 1].hover = false),
+      //   (this.state.tops[id - 1].imgurl = res.data.imgurl)),
+      // ],
+      tops: this.state.tops.map(item => {
+        item.id === res.data.id ? (item.imgurl = res.data.imgurl) : item;
+        return item;
+      }),
     });
   };
 
