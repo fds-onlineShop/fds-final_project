@@ -10,14 +10,12 @@ class TopListProvider extends React.Component {
     id: this.props.id,
     tops: [],
     loading: false,
-    hover: false,
   };
 
   async componentDidMount() {
     this.setState({ loading: true });
     try {
       const res = await superAPI.get(`/tops`);
-
       this.setState({
         tops: res.data.map(p => ({
           id: p.id,
@@ -26,6 +24,7 @@ class TopListProvider extends React.Component {
           price: p.price,
           imgurl: p.imgurl,
           hoverimg: p.hoverimg,
+          hover: false,
         })),
       });
       console.log(this.state);
@@ -50,7 +49,30 @@ class TopListProvider extends React.Component {
       }
     } finally {
       this.setState({ loading: false });
+      alert('장바구니에 담겼습니다.');
     }
+  };
+
+  handleOver = async id => {
+    const res = await superAPI.get(`/tops/${id}`);
+    this.setState({
+      tops: [
+        ...this.state.tops,
+        ((this.state.tops[id - 1].hover = true),
+        (this.state.tops[id - 1].imgurl = res.data.hoverimg)),
+      ],
+    });
+  };
+
+  handleOut = async id => {
+    const res = await superAPI.get(`/tops/${id}`);
+    this.setState({
+      tops: [
+        ...this.state.tops,
+        ((this.state.tops[id - 1].hover = false),
+        (this.state.tops[id - 1].imgurl = res.data.imgurl)),
+      ],
+    });
   };
 
   render() {
@@ -58,6 +80,8 @@ class TopListProvider extends React.Component {
       tops: this.state.tops,
       loading: this.state.loading,
       submit: this.submit,
+      handleOver: this.handleOver,
+      handleOut: this.handleOut,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }

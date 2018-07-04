@@ -8,11 +8,17 @@ export default class BottomListContainer extends React.Component {
   render() {
     return (
       <BottomListConsumer>
-        {({ loading, bottoms, submit }) =>
+        {({ loading, bottoms, submit, handleOver, handleOut }) =>
           loading ? (
             <LoadingBox />
           ) : (
-            <BottomList bottoms={bottoms} onSubmit={submit} brandAs={Link} />
+            <BottomList
+              bottoms={bottoms}
+              onSubmit={submit}
+              brandAs={Link}
+              handleOver={handleOver}
+              handleOut={handleOut}
+            />
           )
         }
       </BottomListConsumer>
