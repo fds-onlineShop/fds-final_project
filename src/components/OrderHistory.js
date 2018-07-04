@@ -25,8 +25,8 @@ export default function OrderHistory({
   ) : (
     // 주문내역이 없는 경우
     <div className="order-history-noitem">
-      <p>There is no order history.</p>
-      <Link to="/main" className="button">
+      <p className="order-history-noitem__info">There is no order history.</p>
+      <Link to="/main" className="button is-black">
         Continue Browsing
       </Link>
     </div>
