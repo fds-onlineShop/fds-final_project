@@ -46,10 +46,11 @@ class BottomListProvider extends React.Component {
     } catch (e) {
       if (e.response && e.response.status === 401) {
         alert('로그인을 해주세요');
+      } else {
+        alert('장바구니에 담겼습니다.');
       }
     } finally {
       this.setState({ loading: false });
-      alert('장바구니에 담겼습니다.');
     }
   };
 
