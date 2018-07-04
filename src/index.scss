@@ -1,8 +1,10 @@
 @import '../node_modules/bulma/bulma.sass';
-@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+html,
 body {
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  font-weight: 300;
   background-color: #fff;
-  font-family: 'ABeeZee', sans-serif;
 }
 
 .navbar {
@@ -24,6 +26,7 @@ video {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  z-index: 50;
 }
 
 .content_dummy-box {
@@ -49,4 +52,51 @@ video {
   display: block;
   width: 1000px;
   margin: 0 auto;
+}
+
+// 로그인 폼
+.hero.is-success {
+  background: #ffffff;
+}
+
+.hero.is-fullheight {
+  min-height: 100%;
+}
+.login-form_layout {
+  .login-form {
+    padding: 0;
+  }
+  .hero .nav,
+  .hero.is-success .nav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .hero-body {
+    flex-grow: 0;
+  }
+  .box {
+    margin-top: 5rem;
+  }
+  .avatar {
+    margin-top: -70px;
+    padding-bottom: 20px;
+  }
+  .avatar img {
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1),
+      0 0 0 1px rgba(10, 10, 10, 0.1);
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  }
+  input {
+    font-weight: 300;
+  }
+  p {
+    font-weight: 700;
+  }
+  p.subtitle {
+    padding-top: 1rem;
+  }
 }
