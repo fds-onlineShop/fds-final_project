@@ -26,7 +26,7 @@ export default class LoginForm extends React.Component {
       <div className="layout-center">
         <form onSubmit={this.handleSubmit}>
           <div className="field">
-            <label className="label">사용자 이름</label>
+            <label className="label">Username</label>
             <div className="control">
               <input
                 className="input"
@@ -37,7 +37,7 @@ export default class LoginForm extends React.Component {
             </div>
           </div>
           <div className="field">
-            <label className="label">비밀번호</label>
+            <label className="label">Password</label>
             <div className="control">
               <input
                 className="input"
@@ -49,7 +49,7 @@ export default class LoginForm extends React.Component {
           </div>
           <div className="field is-grouped">
             <div className="control">
-              <button className="button is-link">전송</button>
+              <button className="button is-link">Login</button>
             </div>
           </div>
         </form>

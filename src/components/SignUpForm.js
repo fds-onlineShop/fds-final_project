@@ -38,7 +38,7 @@ export default class SignUpForm extends React.Component {
       <React.Fragment>
         <form onSubmit={this.handleSubmit}>
           <div className="field">
-            <label className="label">사용자 이름</label>
+            <label className="label">Username</label>
             <div className="control">
               <input
                 className="input"
@@ -49,7 +49,7 @@ export default class SignUpForm extends React.Component {
             </div>
           </div>
           <div className="field">
-            <label className="label">비밀번호</label>
+            <label className="label">Password</label>
             <div className="control">
               <input
                 className="input"
@@ -60,7 +60,7 @@ export default class SignUpForm extends React.Component {
             </div>
           </div>
           <div className="field">
-            <label className="label">주소</label>
+            <label className="label">Address</label>
             <div className="control">
               <input
                 className="input"
@@ -71,7 +71,7 @@ export default class SignUpForm extends React.Component {
             </div>
           </div>
           <div className="field">
-            <label className="label">휴대폰 번호</label>
+            <label className="label">Phone</label>
             <div className="control">
               <input
                 className="input"
@@ -82,7 +82,7 @@ export default class SignUpForm extends React.Component {
             </div>
           </div>
           <div className="field">
-            <label className="label">이메일</label>
+            <label className="label">E-mail</label>
             <div className="control">
               <input
                 className="input"
@@ -94,7 +94,7 @@ export default class SignUpForm extends React.Component {
           </div>
           <div className="field is-grouped">
             <div className="control">
-              <button className="button is-link">회원가입</button>
+              <button className="button is-link">Sign Up</button>
             </div>
           </div>
         </form>
