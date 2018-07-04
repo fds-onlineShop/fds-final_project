@@ -31,7 +31,7 @@ export default function NavBar({
             <div className="field is-grouped">
               {username ? (
                 <React.Fragment>
-                  <span className="navbar-item">{username}님 환영합니다!</span>
+                  <span className="navbar-item">Welcome {username}!</span>
                   <Link to="/cart" className="navbar-item">
                     CART
                   </Link>
