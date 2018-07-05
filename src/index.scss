@@ -53,6 +53,11 @@ video {
   display: block;
   width: 1000px;
   margin: 0 auto;
+  padding-bottom: 50px;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    padding: 0 10px;
+  }
 }
 
 // 로그인,로그아웃 폼

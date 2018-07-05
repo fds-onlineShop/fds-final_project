@@ -9,7 +9,7 @@ export default function MainLayout(props) {
         <div className="container">
           <div className="content has-text-centered">
             <div className="soc">
-              <a href="https://github.com/fds-onlineShop">
+              <a href="https://github.com/fds-onlineShop" target="_blank">
                 <i className="fa fa-github-alt fa-2x" aria-hidden="true" />
               </a>
             </div>

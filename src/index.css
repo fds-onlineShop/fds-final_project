@@ -10691,6 +10691,14 @@ video {
   display: block;
   width: 1000px;
   margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .layout-center {
+    width: 100%;
+    padding: 0 10px;
+  }
 }
 
 .hero.is-success {
