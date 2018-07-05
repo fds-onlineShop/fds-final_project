@@ -14,7 +14,7 @@ export default function MainLayout(props) {
               </a>
             </div>
             <p>
-              <strong>FDS-SHOP</strong> by Kim Sanghyeok, Yun Dogyun, Lee
+              <strong>MOODSELLER</strong> by Kim Sanghyeok, Yun Dogyun, Lee
               Jaeyeon. The source code is licensed{' '}
               <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.{' '}
               <br />

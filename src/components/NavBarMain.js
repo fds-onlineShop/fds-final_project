@@ -17,10 +17,12 @@ export default function NavBar({
           muted="true"
         />
       </div> */}
-      <div className="content_dummy-box" />
+      <div className="content_dummy-box">
+        <h1 className="h1">MOODSELLER</h1>
+      </div>
       <div className="navbar_main">
         <aside className="menu">
-          <p className="menu-label">FDS-SHOP</p>
+          <p className="menu-label">ACCOUNT</p>
           <ul className="menu-list">
             {username ? (
               <React.Fragment>
