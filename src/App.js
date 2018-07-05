@@ -4,8 +4,11 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
 import TopPage from './pages/TopPage';
+import CoatPage from './pages/CoatPage';
 import BottomPage from './pages/BottomPage';
 import ShoesPage from './pages/ShoesPage';
+import BagPage from './pages/BagPage';
+
 import SignupPage from './pages/SignUpPage';
 import CartPage from './pages/CartPage';
 import OrderPage from './pages/OrderPage';
@@ -23,8 +26,10 @@ class App extends Component {
             <Route path="/signup" component={SignUpControl} />
             <Route path="/main" component={MainPage} />
             <Route path="/top" component={TopPage} />
+            <Route path="/coat" component={CoatPage} />
             <Route path="/bottom" component={BottomPage} />
             <Route path="/shoes" component={ShoesPage} />
+            <Route path="/bag" component={BagPage} />
             <Route path="/cart" component={CartControl} />
             <Route path="/order" component={OrderControl} />
             <Route path="/orderhistory" component={OrderHistoryControl} />

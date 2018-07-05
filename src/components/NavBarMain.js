@@ -68,6 +68,11 @@ export default function NavBar({
               </Link>
             </li>
             <li>
+              <Link className="navbar-item" to="/coat">
+                coat
+              </Link>
+            </li>
+            <li>
               <Link className="navbar-item" to="/bottom">
                 bottom
               </Link>
@@ -75,6 +80,11 @@ export default function NavBar({
             <li>
               <Link className="navbar-item" to="/shoes">
                 shoes
+              </Link>
+            </li>
+            <li>
+              <Link className="navbar-item" to="/bag">
+                bag
               </Link>
             </li>
           </ul>

@@ -18,11 +18,17 @@ export default function NavBar({
           <Link className="navbar-item" to="/top">
             top
           </Link>
+          <Link className="navbar-item" to="/coat">
+            coat
+          </Link>
           <Link className="navbar-item" to="/bottom">
             bottom
           </Link>
           <Link className="navbar-item" to="/shoes">
             shoes
+          </Link>
+          <Link className="navbar-item" to="/bag">
+            bag
           </Link>
         </div>
 
