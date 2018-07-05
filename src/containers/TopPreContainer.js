@@ -2,22 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TopListConsumer } from '../contexts/TopListContext';
 import LoadingBox from '../components/LoadingBox';
-import TopList from '../components/TopList';
+import TopPreList from '../components/TopPreList';
 
 export default class TopListContainer extends React.Component {
   render() {
     return (
       <TopListConsumer>
-        {({ loading, tops, submit, ClickEvent, infor, RemoveEvent }) =>
+        {({ loading, submit, infor, RemoveEvent }) =>
           loading ? (
             <LoadingBox />
           ) : (
-            <TopList
-              tops={tops}
+            <TopPreList
+              infor={infor}
               onSubmit={submit}
               brandAs={Link}
-              ClickEvent={ClickEvent}
-              infor={infor}
               RemoveEvent={RemoveEvent}
             />
           )

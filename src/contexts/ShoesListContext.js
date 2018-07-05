@@ -35,15 +35,19 @@ class ShoesListProvider extends React.Component {
   }
 
   submit = async id => {
-    const topItem = this.state.shoes.find(top => top.id === id);
+    const shoesItem = this.state.shoes.find(shoes => shoes.id === id);
     const payload = {
-      imgurl: topItem.imgurl,
-      title: topItem.title,
-      price: topItem.price,
+      imgurl: shoesItem.imgurl,
+      title: shoesItem.title,
+      price: shoesItem.price,
     };
     this.setState({ loading: true });
     try {
       const res = await superAPI.post(`/carts/`, payload);
+    } catch (e) {
+      if (e.response && e.response.status === 401) {
+        alert('로그인을 해주세요');
+      }
     } finally {
       this.setState({ loading: false });
     }

@@ -7,7 +7,7 @@ export default function ShoesList({ shoes, onSubmit }) {
   return (
     <div>
       <div>
-        {shoes.map(top => (
+        {shoes.map(shoes => (
           <ShoesItem key={shoes.id} {...shoes} onSubmit={onSubmit} />
         ))}
       </div>

@@ -1,13 +1,18 @@
 import React from 'react';
 
 import NavBarContainer from '../containers/NavBarContainer';
+
+import BottomListContainer from '../containers/BottomListContainer';
+import { BottomListProvider } from '../contexts/BottomListContext';
 import MainLayout from '../components/MainLayout';
 
 export default function BottomPage() {
   return (
-    <React.Fragment>
+    <BottomListProvider>
       <NavBarContainer />
-      <MainLayout>bottom 페이지입니다.</MainLayout>
-    </React.Fragment>
+      <MainLayout>
+        <BottomListContainer />
+      </MainLayout>
+    </BottomListProvider>
   );
 }

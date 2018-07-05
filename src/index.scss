@@ -1,1 +1,105 @@
 @import '../node_modules/bulma/bulma.sass';
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+body {
+  background-color: #fff;
+  font-family: 'ABeeZee', sans-serif;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.7);
+
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+}
+
+a.navbar-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content_dummy-box {
+  padding-bottom: 60px;
+}
+
+.menu {
+  position: fixed;
+  float: left;
+  z-index: 100;
+
+  margin-left: 80px;
+  &-label,
+  &-list a {
+    color: black;
+  }
+  &-list a {
+    width: min-content;
+  }
+}
+
+.layout-center {
+  display: block;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+// .top-item__layout {
+//   display: flex;
+//   background-color: black;
+//   flex-direction: row;
+// }
+// .con-item {
+//   display: block;
+//   width: 870px;
+// }
+
+.top-pre__layout {
+  margin-top: 10%;
+  margin-left: 30%;
+  display: block;
+  width: 50%;
+  height: 70%;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(182, 163, 154, 0.74);
+}
+
+.top-item__layout {
+  vertical-align: top;
+  display: inline-block;
+  width: 22.22%;
+  text-align: center;
+  justify-content: center;
+}
+.button.is-light {
+  margin: 10px;
+}
+
+.top-form {
+  margin: 30px;
+}
+.control {
+  text-align: center;
+}
+.content {
+  margin: 30px;
+}
+
+// .top-item__list__btn {
+//   background-color: transparent;
+//   border-radius: 10px;
+//   border-width: 5px;
+//   border-color: black;
+//   height: 30px;
+//   width: 60px;
+//   size: 20px;
+// }

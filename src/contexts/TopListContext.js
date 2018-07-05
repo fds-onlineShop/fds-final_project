@@ -10,7 +10,9 @@ class TopListProvider extends React.Component {
     id: this.props.id,
     tops: [],
     loading: false,
-    hover: false,
+    newTitle: '',
+    newPrice: '',
+    infor: [],
   };
 
   async componentDidMount() {
@@ -29,10 +31,34 @@ class TopListProvider extends React.Component {
         })),
       });
       console.log(this.state);
+      console.log(this.state.infor);
     } finally {
       this.setState({ loading: false });
     }
   }
+
+  ClickEvent = id => {
+    this.setState({ loading: true });
+    const topItem = this.state.tops.find(top => top.id === id);
+    this.state.infor.push(topItem);
+    try {
+      this.setState({ topItem });
+      console.log(this.state.infor);
+    } finally {
+      this.setState({ loading: false });
+    }
+  };
+
+  RemoveEvent = () => {
+    this.setState({ loading: true });
+    this.state.infor.shift();
+    try {
+      this.setState({});
+      console.log(this.state.infor);
+    } finally {
+      this.setState({ loading: false });
+    }
+  };
 
   submit = async id => {
     const topItem = this.state.tops.find(top => top.id === id);
@@ -52,9 +78,13 @@ class TopListProvider extends React.Component {
   render() {
     const value = {
       tops: this.state.tops,
+      infor: this.state.infor,
       loading: this.state.loading,
       submit: this.submit,
+      ClickEvent: this.ClickEvent,
+      RemoveEvent: this.RemoveEvent,
     };
+
     return <Provider value={value}>{this.props.children}</Provider>;
   }
 }
