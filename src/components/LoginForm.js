@@ -24,35 +24,58 @@ export default class LoginForm extends React.Component {
 
     return (
       <div className="layout-center">
-        <form onSubmit={this.handleSubmit}>
-          <div className="field">
-            <label className="label">사용자 이름</label>
-            <div className="control">
-              <input
-                className="input"
-                type="text"
-                value={username}
-                onChange={e => onUsernameChange(e.target.value)}
-              />
+        <section className="hero is-success is-fullheight login-form_layout">
+          <div className="hero-body login-form">
+            <div className="container has-text-centered">
+              <div className="column is-4 is-offset-4">
+                <h3 className="title has-text-grey">Login</h3>
+                <div className="box">
+                  <figure className="avatar">
+                    <img
+                      alt="loginImg"
+                      src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-128.png"
+                    />
+                  </figure>
+                  <form onSubmit={this.handleSubmit}>
+                    <div className="field">
+                      <div className="control">
+                        <input
+                          className="input is-large"
+                          type="text"
+                          placeholder="Your Username"
+                          autoFocus=""
+                          value={username}
+                          onChange={e => onUsernameChange(e.target.value)}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="field">
+                      <div className="control">
+                        <input
+                          className="input is-large"
+                          type="password"
+                          placeholder="Your Password"
+                          value={password}
+                          onChange={e => onPasswordChange(e.target.value)}
+                        />
+                      </div>
+                    </div>
+                    <div className="field">
+                      <label className="checkbox">
+                        <input type="checkbox" />
+                        Remember me
+                      </label>
+                    </div>
+                    <button className="button is-block is-info is-large is-fullwidth">
+                      Login
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="field">
-            <label className="label">비밀번호</label>
-            <div className="control">
-              <input
-                className="input"
-                type="password"
-                value={password}
-                onChange={e => onPasswordChange(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="field is-grouped">
-            <div className="control">
-              <button className="button is-link">전송</button>
-            </div>
-          </div>
-        </form>
+        </section>
       </div>
     );
   }

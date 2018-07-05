@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 export default function ShoesItem({
   id,
   title,
@@ -7,11 +7,15 @@ export default function ShoesItem({
   price,
   imgurl,
   onSubmit = () => {},
+  handleOver = () => {},
+  handleOut = () => {},
 }) {
   return (
     <div>
       <form>
         <img
+          onMouseOver={e => handleOver(id)}
+          onMouseOut={e => handleOut(id)}
           src={imgurl}
           alt={title}
           id="img"

@@ -1,5 +1,4 @@
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
-@import url("https://fonts.googleapis.com/css?family=ABeeZee");
 @-webkit-keyframes spinAround {
   from {
     -webkit-transform: rotate(0deg);
@@ -10636,9 +10635,13 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+html,
 body {
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  font-weight: 300;
   background-color: #fff;
-  font-family: 'ABeeZee', sans-serif;
+  height: 100%;
 }
 
 .navbar {
@@ -10659,6 +10662,7 @@ video {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  z-index: 50;
 }
 
 .content_dummy-box {
@@ -10687,5 +10691,66 @@ video {
   display: block;
   width: 1000px;
   margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .layout-center {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.hero.is-success {
+  background: #ffffff;
+}
+
+.hero.is-fullheight {
+  min-height: 100%;
+}
+
+.login-form_layout .login-form {
+  padding: 0;
+}
+
+.login-form_layout .hero .nav,
+.login-form_layout .hero.is-success .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.login-form_layout .hero-body {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+.login-form_layout .box {
+  margin-top: 5rem;
+}
+
+.login-form_layout .avatar {
+  margin-top: -70px;
+  padding-bottom: 20px;
+}
+
+.login-form_layout .avatar img {
+  padding: 5px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+}
+
+.login-form_layout input {
+  font-weight: 300;
+}
+
+.login-form_layout p {
+  font-weight: 700;
+}
+
+.login-form_layout p.subtitle {
+  padding-top: 1rem;
 }
 /*# sourceMappingURL=index.css.map */
