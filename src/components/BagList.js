@@ -4,7 +4,7 @@ import BagItem from './BagItem';
 
 export default function BagList({ bags, onSubmit, handleOver, handleOut }) {
   return (
-    <div>
+    <div className="product-layout">
       <div>
         {bags.map(bag => (
           <BagItem

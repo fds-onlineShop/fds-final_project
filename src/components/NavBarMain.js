@@ -7,7 +7,7 @@ export default function NavBar({
 }) {
   return (
     <React.Fragment>
-      <div className="back">
+      {/* <div className="back">
         <video
           className="bckgd-video"
           src="https://cdn.glitch.com/f41b492f-b6c5-470c-b7e7-586981c597cf%2Fsample.mp4?1530698928410"
@@ -16,7 +16,7 @@ export default function NavBar({
           preload="auto"
           muted="true"
         />
-      </div>
+      </div> */}
       <div className="content_dummy-box" />
       <div className="navbar_main">
         <aside className="menu">

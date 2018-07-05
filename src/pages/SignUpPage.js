@@ -1,13 +1,13 @@
 import React from 'react';
 
 import SignUpFormContainer from '../containers/SignUpFormContainer';
-import NavBarContainer from '../containers/NavBarContainer';
+import NavBarMainContainer from '../containers/NavBarMainContainer';
 import MainLayout from '../components/MainLayout';
 
 export default function LoginPage() {
   return (
     <React.Fragment>
-      <NavBarContainer />
+      <NavBarMainContainer />
       <MainLayout>
         <SignUpFormContainer />
       </MainLayout>

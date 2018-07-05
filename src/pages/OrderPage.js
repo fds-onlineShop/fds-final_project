@@ -1,7 +1,7 @@
 import React from 'react';
 import OrderContainer from '../containers/OrderContainer';
 import { OrderFormProvider } from '../contexts/OrderFormContext';
-import NavBarContainer from '../containers/NavBarContainer';
+import NavBarMainContainer from '../containers/NavBarMainContainer';
 import MainLayout from '../components/MainLayout';
 
 export default class OrderPage extends React.Component {
@@ -11,7 +11,7 @@ export default class OrderPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <NavBarContainer />
+        <NavBarMainContainer />
         <MainLayout>
           <OrderFormProvider>
             <h2 className="member__heading">{this.props.title}</h2>

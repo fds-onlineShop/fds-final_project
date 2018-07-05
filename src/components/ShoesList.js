@@ -4,7 +4,7 @@ import ShoesItem from './ShoesItem';
 
 export default function ShoesList({ shoes, onSubmit, handleOver, handleOut }) {
   return (
-    <div>
+    <div className="product-layout">
       <div>
         {shoes.map(shoes => (
           <ShoesItem

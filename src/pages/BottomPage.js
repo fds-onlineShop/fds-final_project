@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBarContainer from '../containers/NavBarContainer';
+import NavBarMainContainer from '../containers/NavBarMainContainer';
 
 import BottomListContainer from '../containers/BottomListContainer';
 import { BottomListProvider } from '../contexts/BottomListContext';
@@ -9,7 +9,7 @@ import MainLayout from '../components/MainLayout';
 export default function BottomPage() {
   return (
     <BottomListProvider>
-      <NavBarContainer />
+      <NavBarMainContainer />
       <MainLayout>
         <BottomListContainer />
       </MainLayout>

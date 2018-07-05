@@ -4,7 +4,7 @@ import TopItem from './TopItem';
 
 export default function TopList({ tops, onSubmit, handleOver, handleOut }) {
   return (
-    <div>
+    <div className="product-layout">
       <div>
         {tops.map(top => (
           <TopItem

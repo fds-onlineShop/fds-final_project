@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBarContainer from '../containers/NavBarContainer';
+import NavBarMainContainer from '../containers/NavBarMainContainer';
 
 import BagListContainer from '../containers/BagListContainer';
 import { BagListProvider } from '../contexts/BagListContext';
@@ -9,7 +9,7 @@ import MainLayout from '../components/MainLayout';
 export default function BagPage() {
   return (
     <BagListProvider>
-      <NavBarContainer />
+      <NavBarMainContainer />
       <MainLayout>
         <BagListContainer />
       </MainLayout>

@@ -4,7 +4,7 @@ import CoatItem from './CoatItem';
 
 export default function CoatList({ coats, onSubmit, handleOver, handleOut }) {
   return (
-    <div>
+    <div className="product-layout">
       <div>
         {coats.map(coat => (
           <CoatItem
