@@ -39,5 +39,20 @@ export default function TopItem({
         <button onClick={e => onSubmit(id)}>add to my cart</button>
       </form>
     </div>
+    // <div className="top-item__layout">
+    //   <div className="control">
+    //     <form className="content">
+    //       <a>
+    //         <img src={imgurl} alt={title} id="img" className="card-image" />
+    //       </a>
+    //       <div className="title is-4">{title}</div>
+    //       <div className="subtitle is-6">{body}</div>
+    //       <div className="subtitle is-6">{price}</div>
+    //       <button className="button is-light" onClick={e => onSubmit(id)}>
+    //         cart
+    //       </button>
+    //     </form>
+    //   </div>
+    // </div>
   );
 }
