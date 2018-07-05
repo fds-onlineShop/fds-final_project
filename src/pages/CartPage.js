@@ -15,7 +15,7 @@ export default class CartPage extends React.Component {
         <NavBarContainer />
         <MainLayout>
           <CartProvider>
-            <h2>{this.props.title}</h2>
+            <h2 className="member__heading">{this.props.title}</h2>
             <CartContainer />
           </CartProvider>
         </MainLayout>

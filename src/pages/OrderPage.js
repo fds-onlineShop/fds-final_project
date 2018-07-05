@@ -14,7 +14,7 @@ export default class OrderPage extends React.Component {
         <NavBarContainer />
         <MainLayout>
           <OrderFormProvider>
-            <h2>{this.props.title}</h2>
+            <h2 className="member__heading">{this.props.title}</h2>
             <OrderContainer />
           </OrderFormProvider>
         </MainLayout>

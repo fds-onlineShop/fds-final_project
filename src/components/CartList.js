@@ -23,15 +23,18 @@ export default function CartList({
           />
         ))}
       </ul>
-      <Link to="/order" className="button">
-        Checkout / <span className="unit">${cartTotalPrice}</span>
-      </Link>
+      <div className="cart-item__checkout">
+        <Link to="/order" className="button is-black">
+          Checkout /{' '}
+          <span className="cart-item__checkout-unit">${cartTotalPrice}</span>
+        </Link>
+      </div>
     </div>
   ) : (
     // 장바구니가 비어있는 경우
     <div className="cart-noitem">
-      <p>The Cart is empty.</p>
-      <Link to="/" className="button">
+      <p className="cart-noitem__info">The Cart is empty.</p>
+      <Link to="/main" className="button is-black">
         Continue Browsing
       </Link>
     </div>

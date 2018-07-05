@@ -14,7 +14,7 @@ export default class OrderHistoryPage extends React.Component {
         <NavBarContainer />
         <MainLayout>
           <OrderHistoryProvider>
-            <h2>{this.props.title}</h2>
+            <h2 className="member__heading">{this.props.title}</h2>
             <OrderHistoryContainer />
           </OrderHistoryProvider>
         </MainLayout>
