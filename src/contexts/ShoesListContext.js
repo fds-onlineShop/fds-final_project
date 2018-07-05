@@ -10,14 +10,12 @@ class ShoesListProvider extends React.Component {
     id: this.props.id,
     shoes: [],
     loading: false,
-    hover: false,
   };
 
   async componentDidMount() {
     this.setState({ loading: true });
     try {
       const res = await superAPI.get(`/shoes`);
-
       this.setState({
         shoes: res.data.map(p => ({
           id: p.id,
@@ -26,6 +24,7 @@ class ShoesListProvider extends React.Component {
           price: p.price,
           imgurl: p.imgurl,
           hoverimg: p.hoverimg,
+          hover: false,
         })),
       });
       console.log(this.state);
@@ -43,14 +42,46 @@ class ShoesListProvider extends React.Component {
     };
     this.setState({ loading: true });
     try {
-      const res = await superAPI.post(`/carts/`, payload);
+      await superAPI.post(`/carts/`, payload);
     } catch (e) {
       if (e.response && e.response.status === 401) {
         alert('로그인을 해주세요');
+      } else {
+        alert('장바구니에 담겼습니다.');
       }
     } finally {
       this.setState({ loading: false });
     }
+  };
+
+  handleOver = async id => {
+    const res = await superAPI.get(`/shoes/${id}`);
+    this.setState({
+      // shoes: [
+      //   ...this.state.shoes,
+      //   ((this.state.shoes[id - 1].hover = true),
+      //   (this.state.shoshoeses[id - 1].imgurl = res.data.hoverimg)),
+      // ],
+      shoes: this.state.shoes.map(item => {
+        item.id === res.data.id ? (item.imgurl = res.data.hoverimg) : item;
+        return item;
+      }),
+    });
+  };
+
+  handleOut = async id => {
+    const res = await superAPI.get(`/shoes/${id}`);
+    this.setState({
+      // shoes: [
+      //   ...this.state.shoes,
+      //   ((this.state.shoes[id - 1].hover = false),
+      //   (this.state.shoes[id - 1].imgurl = res.data.imgurl)),
+      // ],
+      shoes: this.state.shoes.map(item => {
+        item.id === res.data.id ? (item.imgurl = res.data.imgurl) : item;
+        return item;
+      }),
+    });
   };
 
   render() {
@@ -58,6 +89,8 @@ class ShoesListProvider extends React.Component {
       shoes: this.state.shoes,
       loading: this.state.loading,
       submit: this.submit,
+      handleOver: this.handleOver,
+      handleOut: this.handleOut,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }

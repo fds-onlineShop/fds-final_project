@@ -15,9 +15,15 @@ export default function OrderHistoryItem({
           {orderItems.map((orderItem, index) => {
             return (
               <div className="order-history__table__item" key={index}>
-                <img src={orderItem.imgurl} alt={orderItem.title} />
-                <p>{orderItem.title}</p>
-                <p>{orderItem.price}</p>
+                <div className="order-history__table__item__img-box">
+                  <img src={orderItem.imgurl} alt={orderItem.title} />
+                </div>
+                <p className="order-history__table__item__title">
+                  <strong>{orderItem.title}</strong>
+                </p>
+                <p className="order-history__table__item__price">
+                  {orderItem.price}
+                </p>
               </div>
             );
           })}

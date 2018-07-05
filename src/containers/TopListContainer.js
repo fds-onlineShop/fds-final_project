@@ -8,11 +8,17 @@ export default class TopListContainer extends React.Component {
   render() {
     return (
       <TopListConsumer>
-        {({ loading, tops, submit }) =>
+        {({ loading, tops, submit, handleOver, handleOut }) =>
           loading ? (
             <LoadingBox />
           ) : (
-            <TopList tops={tops} onSubmit={submit} brandAs={Link} />
+            <TopList
+              tops={tops}
+              onSubmit={submit}
+              brandAs={Link}
+              handleOver={handleOver}
+              handleOut={handleOut}
+            />
           )
         }
       </TopListConsumer>

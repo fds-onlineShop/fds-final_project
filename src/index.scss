@@ -1,8 +1,11 @@
 @import '../node_modules/bulma/bulma.sass';
-@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+html,
 body {
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  font-weight: 300;
   background-color: #fff;
-  font-family: 'ABeeZee', sans-serif;
+  height: 100%;
 }
 
 .navbar {
@@ -24,6 +27,7 @@ video {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+  z-index: 50;
 }
 
 .content_dummy-box {
@@ -49,4 +53,355 @@ video {
   display: block;
   width: 1000px;
   margin: 0 auto;
+  padding-bottom: 50px;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+$sub-color: #999;
+// border, remove 버튼 색상
+
+// Loading Bar
+.loading-box {
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-64px, -55px);
+  }
+  &__item {
+    width: 55px;
+    height: 64px;
+    position: absolute;
+    transition: all ease 0.3s;
+    background: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 684"%3E%3Cpath fill="%23010101" d="M305.7 0L0 170.9v342.3L305.7 684 612 513.2V170.9L305.7 0z"/%3E%3Cpath fill="%23fff" d="M305.7 80.1l-233.6 131 233.6 131 234.2-131-234.2-131"/%3E%3C/svg%3E')
+      no-repeat top center;
+  }
+  &-ani1 {
+    animation: loading-animation1 2.18s ease-out infinite;
+  }
+  &-ani2 {
+    animation: loading-animation2 2.18s ease-out infinite;
+  }
+  &-ani3 {
+    animation: loading-animation3 2.18s ease-out infinite;
+    z-index: 2;
+  }
+  &-ani4 {
+    animation: loading-animation4 2.18s ease-out infinite;
+  }
+}
+
+@keyframes loading-animation1 {
+  0%,
+  40% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(28px, -16px);
+  }
+  60%,
+  100% {
+    transform: translate(55px, 0);
+  }
+}
+
+@keyframes loading-animation2 {
+  0%,
+  20% {
+    transform: translate(55px, 0px);
+  }
+  40%,
+  100% {
+    transform: translate(83px, 16px);
+  }
+}
+
+@keyframes loading-animation3 {
+  0% {
+    transform: translate(83px, 16px);
+  }
+  20%,
+  60% {
+    transform: translate(55px, 31px);
+  }
+  90%,
+  100% {
+    transform: translate(28px, 16px);
+  }
+}
+
+@keyframes loading-animation4 {
+  0%,
+  60% {
+    transform: translate(28px, 16px);
+  }
+  90%,
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+// Cart, Order, OrderHistory 공통 제목
+.member__heading {
+  padding: 30px 0 10px;
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+// Cart (장바구니)
+.cart {
+  &-noitem {
+    padding: 60px 0;
+    text-align: center;
+    &__info {
+      margin-bottom: 50px;
+    }
+  }
+  &-item {
+    padding: 20px 0;
+    width: 700px;
+    display: block;
+    margin: 0 auto;
+    @media only screen and (max-width: 700px) {
+      width: 100%;
+    }
+    &__list {
+      > li {
+        display: flex;
+        justify-content: space-around;
+        padding: 5px;
+        > div {
+          padding: 5px;
+          align-self: center;
+        }
+      }
+      &__img {
+        &-box {
+          flex-basis: 70px;
+        }
+      }
+      &__title {
+        flex-basis: 220px;
+      }
+      &__price {
+        flex-basis: 80px;
+        text-align: right;
+      }
+      &__btn-remove {
+        color: $sub-color;
+      }
+    }
+    &__checkout {
+      border-top: 1px solid $sub-color;
+      margin: 20px;
+      padding-top: 35px;
+      text-align: center;
+      &-unit {
+        display: inline-block;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+// Order(주문 페이지)
+.orderForm {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 40px 0;
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+  @media only screen and (max-width: 500px) {
+    margin: 20px 0;
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    @media only screen and (max-width: 900px) {
+      display: block;
+    }
+  }
+  &__address {
+    width: 60%;
+    padding: 20px 40px 20px 20px;
+    border-right: 1px solid $sub-color;
+    @media only screen and (max-width: 900px) {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      border: 0;
+    }
+    &__form {
+      margin: 10px 0 0;
+      & > .control {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__order {
+    width: 40%;
+    padding: 20px 20px 20px 40px;
+    @media only screen and (max-width: 900px) {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    &__list {
+      margin-top: 10px;
+      > li {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        > div {
+          padding: 5px;
+          align-self: center;
+        }
+      }
+      &__img {
+        &-box {
+          flex-basis: 50px;
+        }
+      }
+      &__title {
+        flex-basis: 130px;
+        @media only screen and (max-width: 900px) {
+          flex-basis: 150px;
+        }
+      }
+      &__price {
+        flex-basis: 80px;
+        text-align: right;
+      }
+    }
+    &__total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+      padding-top: 25px;
+      border-top: 1px solid $sub-color;
+      font-size: 1.2rem;
+      &__heading {
+        font-weight: bold;
+      }
+    }
+    &__payment {
+      margin-bottom: 20px;
+      padding-right: 30px;
+      text-align: right;
+      @media only screen and (max-width: 900px) {
+        margin-top: 30px;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// Orderhistory (주문내역 페이지)
+.order-history {
+  &-noitem {
+    padding: 60px 0;
+    text-align: center;
+    &__info {
+      margin-bottom: 50px;
+    }
+  }
+  &__table {
+    margin: 40px auto;
+    border: 1px solid #dbdbdb;
+    th {
+      border-width: 1px !important;
+      background-color: #f2f2f2 !important;
+    }
+    td {
+      border-width: 1px !important;
+    }
+    &__items {
+      display: flex;
+      flex-direction: column;
+    }
+    &__item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      border-bottom: 1px dotted #dbdbdb;
+      @media only screen and (max-width: 500px) {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+      &__img-box {
+        flex-basis: 70px;
+        @media only screen and (max-width: 500px) {
+          flex-basis: auto;
+        }
+      }
+      &__title {
+        flex-basis: 200px;
+        @media only screen and (max-width: 500px) {
+          flex-basis: auto;
+        }
+      }
+      &__price {
+        flex-basis: 80px;
+        @media only screen and (max-width: 500px) {
+          flex-basis: auto;
+        }
+      }
+    }
+// 로그인,로그아웃 폼
+.hero.is-success {
+  background: #ffffff;
+}
+
+.hero.is-fullheight {
+  min-height: 100%;
+}
+
+.login-form_layout {
+  .login-form {
+    padding: 0;
+  }
+  .hero .nav,
+  .hero.is-success .nav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .hero-body {
+    flex-grow: 0;
+  }
+  .box {
+    margin-top: 5rem;
+  }
+  .avatar {
+    margin-top: -70px;
+    padding-bottom: 20px;
+  }
+  .avatar img {
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1),
+      0 0 0 1px rgba(10, 10, 10, 0.1);
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  }
+  input {
+    font-weight: 300;
+  }
+  p {
+    font-weight: 700;
+  }
+  p.subtitle {
+    padding-top: 1rem;
+  }
 }

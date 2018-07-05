@@ -17,7 +17,6 @@ class OrderFormProvider extends React.Component {
     this.setState({ loading: true });
     try {
       const userRes = await superAPI.get(`/me`);
-      console.log(userRes);
       const cartRes = await superAPI.get(`/carts`);
       this.setState({
         orderAddress: userRes.data.address,
@@ -38,7 +37,7 @@ class OrderFormProvider extends React.Component {
   }
 
   submit = async () => {
-    alert('주문이 완료되었습니다.');
+    alert(' Your order has been completed.');
     const date = new Date().toLocaleDateString();
     let priceTotal = 0;
     for (let i = 0; i < this.state.orderItems.length; i++) {
@@ -65,14 +64,13 @@ class OrderFormProvider extends React.Component {
         orderPhone: orderRes.data.orderPhone,
         orderEmail: orderRes.data.orderEmail,
       });
-
       const cartItems = [];
       const cartRes = await superAPI.get(`/carts`);
       for (let i = 0; i < cartRes.data.length; i++) {
         cartItems.push(cartRes.data[i].id);
       }
       for (let i = 0; i < cartItems.length; i++) {
-        await superAPI.delete(`/carts/${cartItems[i]}?_expand=user`);
+        await superAPI.delete(`/carts/${cartItems[i]}`);
       }
     } finally {
       this.setState({ loading: false });
