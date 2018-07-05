@@ -10650,6 +10650,7 @@ body {
   width: 100%;
   text-align: right;
   position: fixed;
+  z-index: 40;
 }
 
 a.navbar-item:hover {
@@ -10963,7 +10964,7 @@ video {
   -webkit-box-direction: reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
-  margin: 40px 0;
+  margin-left: 100px;
 }
 
 @media only screen and (max-width: 900px) {

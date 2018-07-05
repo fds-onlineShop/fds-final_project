@@ -13,6 +13,7 @@ body {
   width: 100%;
   text-align: right;
   position: fixed;
+  z-index: 40;
 }
 // .navbar {
 //   background: rgba(255, 255, 255, 0.7);
@@ -231,7 +232,7 @@ $sub-color: #999;
 .orderForm {
   display: flex;
   flex-direction: column-reverse;
-  margin: 40px 0;
+  margin-left: 100px;
   @media only screen and (max-width: 900px) {
     flex-direction: column;
   }
@@ -428,3 +429,21 @@ $sub-color: #999;
     padding-top: 1rem;
   }
 }
+
+// .top-item__layout {
+//   vertical-align: top;
+//   display: inline-block;
+//   width: 22.22%;
+//   text-align: center;
+//   justify-content: center;
+// }
+
+// .top-form {
+//   margin: 30px;
+// }
+// .control {
+//   text-align: center;
+// }
+// .content {
+//   margin: 30px;
+// }
