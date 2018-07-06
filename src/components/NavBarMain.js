@@ -29,7 +29,7 @@ export default function NavBar({
           <ul className="menu-list">
             {admin ? (
               <React.Fragment>
-                <span className="navbar-item">Welcome {username}!</span>
+                <span className="navbar-item">Welcome Admin!</span>
                 <li>
                   <NavLink to="/cart" className="navbar-item">
                     CART
