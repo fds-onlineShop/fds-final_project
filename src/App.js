@@ -13,7 +13,7 @@ import SignupPage from './pages/SignUpPage';
 import CartPage from './pages/CartPage';
 import OrderPage from './pages/OrderPage';
 import OrderHistoryPage from './pages/OrderHistoryPage';
-
+import AdminMainPage from './pages/AdminMainPage';
 import { AuthProvider } from './contexts/AuthContext';
 
 class App extends Component {
@@ -33,6 +33,7 @@ class App extends Component {
             <Route path="/cart" component={CartControl} />
             <Route path="/order" component={OrderControl} />
             <Route path="/orderhistory" component={OrderHistoryControl} />
+            <Route path="/admin" component={AdminMainPage} />
             <Route
               exact
               path="/"
