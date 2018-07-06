@@ -8,7 +8,16 @@ export default class BottomListContainer extends React.Component {
   render() {
     return (
       <BottomListConsumer>
-        {({ loading, bottoms, submit, handleOver, handleOut }) =>
+        {({
+          loading,
+          bottoms,
+          submit,
+          handleOver,
+          handleOut,
+          ClickEvent,
+          infor,
+          RemoveEvent,
+        }) =>
           loading ? (
             <LoadingBox />
           ) : (
@@ -18,6 +27,9 @@ export default class BottomListContainer extends React.Component {
               brandAs={Link}
               handleOver={handleOver}
               handleOut={handleOut}
+              ClickEvent={ClickEvent}
+              infor={infor}
+              RemoveEvent={RemoveEvent}
             />
           )
         }

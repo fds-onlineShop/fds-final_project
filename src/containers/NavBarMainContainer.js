@@ -4,7 +4,7 @@ import { AuthConsumer } from '../contexts/AuthContext';
 import NavBarMain from '../components/NavBarMain';
 import { Link, Redirect } from 'react-router-dom';
 
-export default class NavBarContainer extends React.Component {
+export default class NavBarMainContainer extends React.Component {
   state = {
     loggedOut: false,
   };

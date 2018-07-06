@@ -1,7 +1,7 @@
 import React from 'react';
 import OrderHistoryContainer from '../containers/OrderHistoryContainer';
 import { OrderHistoryProvider } from '../contexts/OrderHistoryContext';
-import NavBarContainer from '../containers/NavBarContainer';
+import NavBarMainContainer from '../containers/NavBarMainContainer';
 import MainLayout from '../components/MainLayout';
 
 export default class OrderHistoryPage extends React.Component {
@@ -11,7 +11,7 @@ export default class OrderHistoryPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <NavBarContainer />
+        <NavBarMainContainer />
         <MainLayout>
           <OrderHistoryProvider>
             <h2 className="member__heading">{this.props.title}</h2>

@@ -7,20 +7,33 @@ body {
   background-color: #fff;
   height: 100%;
 }
-
-.navbar {
-  background: rgba(255, 255, 255, 0.7);
-
-  width: 100%;
-  text-align: center;
-  position: fixed;
-  z-index: 100;
+h1 a {
+  color: #333;
+  padding: 0 10px;
 }
+.h1 {
+  font-size: 3rem;
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+  text-align: right;
+  position: fixed;
+  z-index: 40;
+}
+// .navbar {
+//   background: rgba(255, 255, 255, 0.7);
+//   width: 100%;
+//   text-align: center;
+//   position: fixed;
+//   z-index: 100;
+// }
 
 a.navbar-item:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
+a.navbar-item.active {
+  font-weight: 400;
+}
 video {
   position: fixed;
   right: 0;
@@ -30,15 +43,23 @@ video {
   z-index: 50;
 }
 
+.footer {
+  height: 40px;
+}
 .content_dummy-box {
-  padding-bottom: 60px;
+  // padding-bottom: 60px;
+}
+
+.product-layout {
+  padding-left: 150px;
+  margin-top: 65px;
 }
 
 .menu {
   position: fixed;
   float: left;
-  z-index: 100;
-
+  z-index: 200;
+  margin-top: 65px;
   margin-left: 80px;
   &-label,
   &-list a {
@@ -49,7 +70,14 @@ video {
   }
 }
 
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .layout-center {
+  flex: 1;
   display: block;
   width: 1000px;
   margin: 0 auto;
@@ -146,7 +174,7 @@ $sub-color: #999;
 
 // Cart, Order, OrderHistory 공통 제목
 .member__heading {
-  padding: 30px 0 10px;
+  padding: 70px 0 10px;
   font-size: 2.3rem;
   text-align: center;
 }
@@ -211,7 +239,7 @@ $sub-color: #999;
 .orderForm {
   display: flex;
   flex-direction: column-reverse;
-  margin: 40px 0;
+  margin-left: 100px;
   @media only screen and (max-width: 900px) {
     flex-direction: column;
   }
@@ -314,11 +342,15 @@ $sub-color: #999;
     margin: 40px auto;
     border: 1px solid #dbdbdb;
     th {
+      padding: 0.8em;
       border-width: 1px !important;
       background-color: #f2f2f2 !important;
+      text-align: center;
     }
     td {
       border-width: 1px !important;
+      vertical-align: middle;
+      text-align: center;
     }
     &__items {
       display: flex;
@@ -340,13 +372,13 @@ $sub-color: #999;
         border-bottom: 0;
       }
       &__img-box {
-        flex-basis: 70px;
+        flex-basis: 60px;
         @media only screen and (max-width: 500px) {
           flex-basis: auto;
         }
       }
       &__title {
-        flex-basis: 200px;
+        flex-basis: 280px;
         @media only screen and (max-width: 500px) {
           flex-basis: auto;
         }
@@ -358,6 +390,8 @@ $sub-color: #999;
         }
       }
     }
+  }
+}
 // 로그인,로그아웃 폼
 .hero.is-success {
   background: #ffffff;
@@ -368,6 +402,7 @@ $sub-color: #999;
 }
 
 .login-form_layout {
+  margin-top: 50px;
   .login-form {
     padding: 0;
   }
@@ -403,5 +438,201 @@ $sub-color: #999;
   }
   p.subtitle {
     padding-top: 1rem;
+  }
+}
+
+// .top-item__layout {
+//   vertical-align: top;
+//   display: inline-block;
+//   width: 22.22%;
+//   text-align: center;
+//   justify-content: center;
+// }
+
+// .top-form {
+//   margin: 30px;
+// }
+// .control {
+//   text-align: center;
+// }
+// .content {
+//   margin: 30px;
+// }
+
+/// tesitng
+.pre__layout {
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -250px;
+  display: block;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(182, 163, 154, 0.74);
+}
+.pre-img {
+  width: 200px;
+}
+.item__layout {
+  vertical-align: top;
+  display: inline-block;
+  width: 22.22%;
+  text-align: center;
+  justify-content: center;
+}
+.button.is-light {
+  margin: 10px;
+}
+.control {
+  text-align: center;
+}
+.content {
+  margin: 30px;
+}
+
+// Admin (관리자 페이지)
+.admin {
+  &-main__info {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  &-menu {
+    margin: 20px 0 40px;
+    text-align: center;
+    @media only screen and (max-width: 500px) {
+      margin: 15px 0 20px;
+    }
+    &__list {
+      display: inline-block;
+      margin-right: 10px;
+      @media only screen and (max-width: 500px) {
+        margin-bottom: 8px;
+      }
+    }
+    &__item {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid $sub-color;
+      color: $sub-color;
+      border-radius: 10px;
+      &.active {
+        border: 1px solid #666;
+        background-color: #666;
+        color: #fff;
+      }
+    }
+  }
+  &-product__item {
+    margin: 50px 0;
+    @media only screen and (max-width: 500px) {
+      margin: 20px 0 40px;
+    }
+    &__head {
+      width: 700px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+      }
+    }
+    &__info {
+      font-size: 1.3rem;
+      font-weight: bold;
+      span {
+        text-transform: uppercase;
+      }
+    }
+    &__table {
+      margin: 20px auto;
+      border: 1px solid #dbdbdb;
+      &__btn-edit {
+        margin-bottom: 5px;
+      }
+
+      th {
+        padding: 0.8em;
+        border-width: 1px !important;
+        background-color: #f2f2f2 !important;
+        text-align: center;
+        @media only screen and (max-width: 500px) {
+          padding: 0.5em;
+        }
+        &.admin-product__item__table-num {
+          width: 55px;
+        }
+        &.admin-product__item__table-image {
+          width: 240px;
+        }
+        &.admin-product__item__table-name {
+          width: 210px;
+        }
+        &.admin-product__item__table-price {
+          width: 80px;
+          @media only screen and (max-width: 500px) {
+            display: none;
+          }
+        }
+        &.admin-product__item__table-setting {
+          width: 115px;
+        }
+      }
+      td {
+        border-width: 1px !important;
+        vertical-align: middle;
+        text-align: center;
+        @media only screen and (max-width: 500px) {
+          padding: 0.3em 0.5em;
+        }
+        img {
+          margin: 0 10px;
+          width: 190px;
+          @media only screen and (max-width: 500px) {
+            margin: 0;
+            width: 100%;
+          }
+        }
+        &.admin-product__item__table-price {
+          @media only screen and (max-width: 500px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &-form {
+    &__heading {
+      padding-bottom: 10px;
+      width: 700px;
+      margin: 0 auto;
+      padding-top: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+      }
+    }
+    &__container {
+      width: 700px;
+      margin: 0 auto;
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+      }
+      h3 {
+        font-size: 1.3rem;
+        padding: 5px 0;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+    &__button {
+      margin: 30px 0;
+      text-align: center;
+    }
   }
 }

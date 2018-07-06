@@ -3,7 +3,7 @@ import React from 'react';
 export default function MainLayout(props) {
   return (
     <div className="main-layout">
-      <div className="content_dummy-box" />
+      {/* <div className="content_dummy-box" /> */}
       <div className="layout-center">{props.children}</div>
       <footer className="footer">
         <div className="container">
@@ -14,7 +14,7 @@ export default function MainLayout(props) {
               </a>
             </div>
             <p>
-              <strong>FDS-SHOP</strong> by Kim Sanghyeok, Yun Dogyun, Lee
+              <strong>MOODSELLER</strong> by Kim Sanghyeok, Yun Dogyun, Lee
               Jaeyeon. The source code is licensed{' '}
               <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.{' '}
               <br />

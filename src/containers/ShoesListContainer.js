@@ -8,7 +8,16 @@ export default class ShoesListContainer extends React.Component {
   render() {
     return (
       <ShoesListConsumer>
-        {({ loading, shoes, submit, handleOver, handleOut }) =>
+        {({
+          loading,
+          shoes,
+          submit,
+          handleOver,
+          handleOut,
+          ClickEvent,
+          infor,
+          RemoveEvent,
+        }) =>
           loading ? (
             <LoadingBox />
           ) : (
@@ -18,6 +27,9 @@ export default class ShoesListContainer extends React.Component {
               brandAs={Link}
               handleOver={handleOver}
               handleOut={handleOut}
+              ClickEvent={ClickEvent}
+              infor={infor}
+              RemoveEvent={RemoveEvent}
             />
           )
         }

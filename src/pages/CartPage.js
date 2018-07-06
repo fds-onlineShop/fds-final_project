@@ -2,7 +2,7 @@ import React from 'react';
 
 import CartContainer from '../containers/CartContainer';
 import { CartProvider } from '../contexts/CartContext';
-import NavBarContainer from '../containers/NavBarContainer';
+import NavBarMainContainer from '../containers/NavBarMainContainer';
 import MainLayout from '../components/MainLayout';
 
 export default class CartPage extends React.Component {
@@ -12,7 +12,7 @@ export default class CartPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <NavBarContainer />
+        <NavBarMainContainer />
         <MainLayout>
           <CartProvider>
             <h2 className="member__heading">{this.props.title}</h2>

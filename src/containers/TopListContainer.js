@@ -8,7 +8,16 @@ export default class TopListContainer extends React.Component {
   render() {
     return (
       <TopListConsumer>
-        {({ loading, tops, submit, handleOver, handleOut }) =>
+        {({
+          loading,
+          tops,
+          submit,
+          handleOver,
+          handleOut,
+          ClickEvent,
+          infor,
+          RemoveEvent,
+        }) =>
           loading ? (
             <LoadingBox />
           ) : (
@@ -18,6 +27,9 @@ export default class TopListContainer extends React.Component {
               brandAs={Link}
               handleOver={handleOver}
               handleOut={handleOut}
+              ClickEvent={ClickEvent}
+              infor={infor}
+              RemoveEvent={RemoveEvent}
             />
           )
         }

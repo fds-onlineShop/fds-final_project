@@ -1,7 +1,8 @@
 import React from 'react';
 
-import NavBarContainer from '../containers/NavBarContainer';
+import NavBarMainContainer from '../containers/NavBarMainContainer';
 
+import ShoesPreContainer from '../containers/ShoesPreContainer';
 import ShoesListContainer from '../containers/ShoesListContainer';
 import { ShoesListProvider } from '../contexts/ShoesListContext';
 import MainLayout from '../components/MainLayout';
@@ -9,7 +10,8 @@ import MainLayout from '../components/MainLayout';
 export default function ShoesPage() {
   return (
     <ShoesListProvider>
-      <NavBarContainer />
+      <NavBarMainContainer />
+      <ShoesPreContainer />
       <MainLayout>
         <ShoesListContainer />
       </MainLayout>
