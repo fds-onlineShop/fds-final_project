@@ -40,7 +40,7 @@ export default function NavBar({
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/cart" className="navbar-item">
+                  <NavLink to="/admin" className="navbar-item">
                     ADMIN
                   </NavLink>
                 </li>
