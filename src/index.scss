@@ -335,11 +335,15 @@ $sub-color: #999;
     margin: 40px auto;
     border: 1px solid #dbdbdb;
     th {
+      padding: 0.8em;
       border-width: 1px !important;
       background-color: #f2f2f2 !important;
+      text-align: center;
     }
     td {
       border-width: 1px !important;
+      vertical-align: middle;
+      text-align: center;
     }
     &__items {
       display: flex;
@@ -361,13 +365,13 @@ $sub-color: #999;
         border-bottom: 0;
       }
       &__img-box {
-        flex-basis: 70px;
+        flex-basis: 60px;
         @media only screen and (max-width: 500px) {
           flex-basis: auto;
         }
       }
       &__title {
-        flex-basis: 200px;
+        flex-basis: 280px;
         @media only screen and (max-width: 500px) {
           flex-basis: auto;
         }
@@ -484,4 +488,148 @@ $sub-color: #999;
 }
 .content {
   margin: 30px;
+}
+
+// Admin (관리자 페이지)
+.admin {
+  &-main__info {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  &-menu {
+    margin: 20px 0 40px;
+    text-align: center;
+    @media only screen and (max-width: 500px) {
+      margin: 15px 0 20px;
+    }
+    &__list {
+      display: inline-block;
+      margin-right: 10px;
+      @media only screen and (max-width: 500px) {
+        margin-bottom: 8px;
+      }
+    }
+    &__item {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid $sub-color;
+      color: $sub-color;
+      border-radius: 10px;
+      &.active {
+        border: 1px solid #666;
+        background-color: #666;
+        color: #fff;
+      }
+    }
+  }
+  &-product__item {
+    margin: 50px 0;
+    @media only screen and (max-width: 500px) {
+      margin: 20px 0 40px;
+    }
+    &__head {
+      width: 700px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+      }
+    }
+    &__info {
+      font-size: 1.3rem;
+      font-weight: bold;
+      span {
+        text-transform: uppercase;
+      }
+    }
+    &__table {
+      margin: 20px auto;
+      border: 1px solid #dbdbdb;
+      &__btn-edit {
+        margin-bottom: 5px;
+      }
+
+      th {
+        padding: 0.8em;
+        border-width: 1px !important;
+        background-color: #f2f2f2 !important;
+        text-align: center;
+        @media only screen and (max-width: 500px) {
+          padding: 0.5em;
+        }
+        &.admin-product__item__table-num {
+          width: 55px;
+        }
+        &.admin-product__item__table-image {
+          width: 240px;
+        }
+        &.admin-product__item__table-name {
+          width: 210px;
+        }
+        &.admin-product__item__table-price {
+          width: 80px;
+          @media only screen and (max-width: 500px) {
+            display: none;
+          }
+        }
+        &.admin-product__item__table-setting {
+          width: 115px;
+        }
+      }
+      td {
+        border-width: 1px !important;
+        vertical-align: middle;
+        text-align: center;
+        @media only screen and (max-width: 500px) {
+          padding: 0.3em 0.5em;
+        }
+        img {
+          margin: 0 10px;
+          width: 190px;
+          @media only screen and (max-width: 500px) {
+            margin: 0;
+            width: 100%;
+          }
+        }
+        &.admin-product__item__table-price {
+          @media only screen and (max-width: 500px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &-form {
+    &__heading {
+      padding-bottom: 10px;
+      width: 700px;
+      margin: 0 auto;
+      padding-top: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+      }
+    }
+    &__container {
+      width: 700px;
+      margin: 0 auto;
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+      }
+      h3 {
+        font-size: 1.3rem;
+        padding: 5px 0;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+    &__button {
+      margin: 30px 0;
+      text-align: center;
+    }
+  }
 }
