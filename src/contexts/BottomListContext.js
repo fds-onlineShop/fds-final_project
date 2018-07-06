@@ -10,6 +10,9 @@ class BottomListProvider extends React.Component {
     id: this.props.id,
     bottoms: [],
     loading: false,
+    newTitle: '',
+    newPrice: '',
+    infor: [],
   };
 
   async componentDidMount() {
@@ -32,6 +35,29 @@ class BottomListProvider extends React.Component {
       this.setState({ loading: false });
     }
   }
+
+  ClickEvent = id => {
+    this.setState({ loading: true });
+    const bottomItem = this.state.bottoms.find(bottom => bottom.id === id);
+    this.state.infor.push(bottomItem);
+    try {
+      this.setState({ bottomItem });
+      console.log(this.state.infor);
+    } finally {
+      this.setState({ loading: false });
+    }
+  };
+
+  RemoveEvent = () => {
+    this.setState({ loading: true });
+    this.state.infor.shift();
+    try {
+      this.setState({});
+      console.log(this.state.infor);
+    } finally {
+      this.setState({ loading: false });
+    }
+  };
 
   submit = async id => {
     const bottomItem = this.state.bottoms.find(bottom => bottom.id === id);
@@ -56,11 +82,6 @@ class BottomListProvider extends React.Component {
   handleOver = async id => {
     const res = await superAPI.get(`/bottoms/${id}`);
     this.setState({
-      // bottoms: [
-      //   ...this.state.bottoms,
-      //   ((this.state.bottoms[id - 1].hover = true),
-      //   (this.state.bottoms[id - 1].imgurl = res.data.hoverimg)),
-      // ],
       bottoms: this.state.bottoms.map(item => {
         item.id === res.data.id ? (item.imgurl = res.data.hoverimg) : item;
         return item;
@@ -71,11 +92,6 @@ class BottomListProvider extends React.Component {
   handleOut = async id => {
     const res = await superAPI.get(`/bottoms/${id}`);
     this.setState({
-      // bottoms: [
-      //   ...this.state.bottoms,
-      //   ((this.state.bottoms[id - 1].hover = false),
-      //   (this.state.bottoms[id - 1].imgurl = res.data.imgurl)),
-      // ],
       bottoms: this.state.bottoms.map(item => {
         item.id === res.data.id ? (item.imgurl = res.data.imgurl) : item;
         return item;
@@ -86,10 +102,13 @@ class BottomListProvider extends React.Component {
   render() {
     const value = {
       bottoms: this.state.bottoms,
+      infor: this.state.infor,
       loading: this.state.loading,
       submit: this.submit,
       handleOver: this.handleOver,
       handleOut: this.handleOut,
+      ClickEvent: this.ClickEvent,
+      RemoveEvent: this.RemoveEvent,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }

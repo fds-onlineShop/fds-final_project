@@ -1,12 +1,12 @@
 import React from 'react';
-import TopPreItem from './TopPreItem';
+import CoatPreItem from './CoatPreItem';
 
-export default function TopList({ onSubmit, infor, RemoveEvent }) {
+export default function CoatList({ onSubmit, infor, RemoveEvent }) {
   return (
-    <div className=" top-list">
+    <div className=" coat-list">
       <div>
         {infor.map(infor => (
-          <TopPreItem
+          <CoatPreItem
             key={infor.id}
             {...infor}
             onSubmit={onSubmit}

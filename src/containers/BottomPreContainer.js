@@ -2,33 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BottomListConsumer } from '../contexts/BottomListContext';
 import LoadingBox from '../components/LoadingBox';
-import BottomList from '../components/BottomList';
+import BottomPreList from '../components/BottomPreList';
 
 export default class BottomListContainer extends React.Component {
   render() {
     return (
       <BottomListConsumer>
-        {({
-          loading,
-          bottoms,
-          submit,
-          handleOver,
-          handleOut,
-          ClickEvent,
-          infor,
-          RemoveEvent,
-        }) =>
+        {({ loading, submit, infor, RemoveEvent }) =>
           loading ? (
             <LoadingBox />
           ) : (
-            <BottomList
-              bottoms={bottoms}
+            <BottomPreList
+              infor={infor}
               onSubmit={submit}
               brandAs={Link}
-              handleOver={handleOver}
-              handleOut={handleOut}
-              ClickEvent={ClickEvent}
-              infor={infor}
               RemoveEvent={RemoveEvent}
             />
           )

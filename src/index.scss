@@ -449,7 +449,7 @@ $sub-color: #999;
 // }
 
 /// tesitng
-.top-pre__layout {
+.pre__layout {
   top: 50%;
   left: 50%;
   margin-top: -250px;
@@ -465,7 +465,7 @@ $sub-color: #999;
 .pre-img {
   width: 200px;
 }
-.top-item__layout {
+.item__layout {
   vertical-align: top;
   display: inline-block;
   width: 22.22%;
@@ -474,10 +474,6 @@ $sub-color: #999;
 }
 .button.is-light {
   margin: 10px;
-}
-
-.top-form {
-  margin: 30px;
 }
 .control {
   text-align: center;

@@ -10,6 +10,9 @@ class ShoesListProvider extends React.Component {
     id: this.props.id,
     shoes: [],
     loading: false,
+    newTitle: '',
+    newPrice: '',
+    infor: [],
   };
 
   async componentDidMount() {
@@ -32,6 +35,29 @@ class ShoesListProvider extends React.Component {
       this.setState({ loading: false });
     }
   }
+
+  ClickEvent = id => {
+    this.setState({ loading: true });
+    const shoesItem = this.state.shoes.find(shoes => shoes.id === id);
+    this.state.infor.push(shoesItem);
+    try {
+      this.setState({ shoesItem });
+      console.log(this.state.infor);
+    } finally {
+      this.setState({ loading: false });
+    }
+  };
+
+  RemoveEvent = () => {
+    this.setState({ loading: true });
+    this.state.infor.shift();
+    try {
+      this.setState({});
+      console.log(this.state.infor);
+    } finally {
+      this.setState({ loading: false });
+    }
+  };
 
   submit = async id => {
     const shoesItem = this.state.shoes.find(shoes => shoes.id === id);
@@ -56,11 +82,6 @@ class ShoesListProvider extends React.Component {
   handleOver = async id => {
     const res = await superAPI.get(`/shoes/${id}`);
     this.setState({
-      // shoes: [
-      //   ...this.state.shoes,
-      //   ((this.state.shoes[id - 1].hover = true),
-      //   (this.state.shoshoeses[id - 1].imgurl = res.data.hoverimg)),
-      // ],
       shoes: this.state.shoes.map(item => {
         item.id === res.data.id ? (item.imgurl = res.data.hoverimg) : item;
         return item;
@@ -71,11 +92,6 @@ class ShoesListProvider extends React.Component {
   handleOut = async id => {
     const res = await superAPI.get(`/shoes/${id}`);
     this.setState({
-      // shoes: [
-      //   ...this.state.shoes,
-      //   ((this.state.shoes[id - 1].hover = false),
-      //   (this.state.shoes[id - 1].imgurl = res.data.imgurl)),
-      // ],
       shoes: this.state.shoes.map(item => {
         item.id === res.data.id ? (item.imgurl = res.data.imgurl) : item;
         return item;
@@ -86,10 +102,13 @@ class ShoesListProvider extends React.Component {
   render() {
     const value = {
       shoes: this.state.shoes,
+      infor: this.state.infor,
       loading: this.state.loading,
       submit: this.submit,
       handleOver: this.handleOver,
       handleOut: this.handleOut,
+      ClickEvent: this.ClickEvent,
+      RemoveEvent: this.RemoveEvent,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }

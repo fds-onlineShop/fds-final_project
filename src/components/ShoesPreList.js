@@ -1,12 +1,12 @@
 import React from 'react';
-import TopPreItem from './TopPreItem';
+import ShoesPreItem from './ShoesPreItem';
 
-export default function TopList({ onSubmit, infor, RemoveEvent }) {
+export default function ShoesList({ onSubmit, infor, RemoveEvent }) {
   return (
-    <div className=" top-list">
+    <div className=" shoes-list">
       <div>
         {infor.map(infor => (
-          <TopPreItem
+          <ShoesPreItem
             key={infor.id}
             {...infor}
             onSubmit={onSubmit}

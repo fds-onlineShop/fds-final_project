@@ -10,6 +10,9 @@ class BagListProvider extends React.Component {
     id: this.props.id,
     bags: [],
     loading: false,
+    newTitle: '',
+    newPrice: '',
+    infor: [],
   };
 
   async componentDidMount() {
@@ -32,6 +35,29 @@ class BagListProvider extends React.Component {
       this.setState({ loading: false });
     }
   }
+
+  ClickEvent = id => {
+    this.setState({ loading: true });
+    const bagItem = this.state.bags.find(bag => bag.id === id);
+    this.state.infor.push(bagItem);
+    try {
+      this.setState({ bagItem });
+      console.log(this.state.infor);
+    } finally {
+      this.setState({ loading: false });
+    }
+  };
+
+  RemoveEvent = () => {
+    this.setState({ loading: true });
+    this.state.infor.shift();
+    try {
+      this.setState({});
+      console.log(this.state.infor);
+    } finally {
+      this.setState({ loading: false });
+    }
+  };
 
   submit = async id => {
     const bagItem = this.state.bags.find(bag => bag.id === id);
@@ -56,11 +82,6 @@ class BagListProvider extends React.Component {
   handleOver = async id => {
     const res = await superAPI.get(`/bags/${id}`);
     this.setState({
-      // bags: [
-      //   ...this.state.bags,
-      //   ((this.state.bags[id - 1].hover = true),
-      //   (this.state.bags[id - 1].imgurl = res.data.hoverimg)),
-      // ],
       bags: this.state.bags.map(item => {
         item.id === res.data.id ? (item.imgurl = res.data.hoverimg) : item;
         return item;
@@ -71,11 +92,6 @@ class BagListProvider extends React.Component {
   handleOut = async id => {
     const res = await superAPI.get(`/bags/${id}`);
     this.setState({
-      // bags: [
-      //   ...this.state.bags,
-      //   ((this.state.bags[id - 1].hover = false),
-      //   (this.state.bags[id - 1].imgurl = res.data.imgurl)),
-      // ],
       bags: this.state.bags.map(item => {
         item.id === res.data.id ? (item.imgurl = res.data.imgurl) : item;
         return item;
@@ -86,10 +102,13 @@ class BagListProvider extends React.Component {
   render() {
     const value = {
       bags: this.state.bags,
+      infor: this.state.infor,
       loading: this.state.loading,
       submit: this.submit,
       handleOver: this.handleOver,
       handleOut: this.handleOut,
+      ClickEvent: this.ClickEvent,
+      RemoveEvent: this.RemoveEvent,
     };
     return <Provider value={value}>{this.props.children}</Provider>;
   }

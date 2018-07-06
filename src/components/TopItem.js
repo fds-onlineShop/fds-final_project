@@ -3,21 +3,20 @@ import React from 'react';
 export default function TopItem({
   id,
   title,
-  body,
-  price,
   imgurl,
-  onSubmit = () => {},
   handleOver = () => {},
   handleOut = () => {},
   ClickEvent = () => {},
   RemoveEvent = () => {},
 }) {
   return (
-    <div className="top-item__layout">
+    <div className="item__layout">
       <div className="control">
         <div className="content">
           <a onClick={e => ClickEvent(id)}>
             <img
+              onMouseOver={e => handleOver(id)}
+              onMouseOut={e => handleOut(id)}
               src={imgurl}
               alt={title}
               id="img"
