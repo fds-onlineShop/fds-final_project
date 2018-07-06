@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function NavBar({
   username = null, // 표시할 사용자 이름
@@ -18,7 +18,9 @@ export default function NavBar({
         />
       </div> */}
       <div className="content_dummy-box">
-        <h1 className="h1">MOODSELLER</h1>
+        <h1 className="h1">
+          <Link to="/main">MOODSELLER</Link>
+        </h1>
       </div>
       <div className="navbar_main">
         <aside className="menu">
@@ -28,14 +30,19 @@ export default function NavBar({
               <React.Fragment>
                 <span className="navbar-item">Welcome {username}!</span>
                 <li>
-                  <Link to="/cart" className="navbar-item">
+                  <NavLink to="/admin" className="navbar-item">
                     CART
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/orderhistory" className="navbar-item">
+                  <NavLink to="/orderhistory" className="navbar-item">
                     ORDER
-                  </Link>
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/cart" className="navbar-item">
+                    ADMIN
+                  </NavLink>
                 </li>
                 <li>
                   <Link
@@ -65,29 +72,29 @@ export default function NavBar({
           <p className="menu-label">Product</p>
           <ul className="menu-list">
             <li>
-              <Link className="navbar-item" to="/top">
+              <NavLink className="navbar-item" to="/top">
                 top
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="navbar-item" to="/coat">
+              <NavLink className="navbar-item" to="/coat">
                 coat
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="navbar-item" to="/bottom">
+              <NavLink className="navbar-item" to="/bottom">
                 bottom
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="navbar-item" to="/shoes">
+              <NavLink className="navbar-item" to="/shoes">
                 shoes
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="navbar-item" to="/bag">
+              <NavLink className="navbar-item" to="/bag">
                 bag
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </aside>
