@@ -447,3 +447,41 @@ $sub-color: #999;
 // .content {
 //   margin: 30px;
 // }
+
+/// tesitng
+.top-pre__layout {
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -250px;
+  display: block;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(182, 163, 154, 0.74);
+}
+.pre-img {
+  width: 200px;
+}
+.top-item__layout {
+  vertical-align: top;
+  display: inline-block;
+  width: 22.22%;
+  text-align: center;
+  justify-content: center;
+}
+.button.is-light {
+  margin: 10px;
+}
+
+.top-form {
+  margin: 30px;
+}
+.control {
+  text-align: center;
+}
+.content {
+  margin: 30px;
+}
